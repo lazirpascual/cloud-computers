@@ -1,4 +1,4 @@
-import React, { useContext, useEfect } from "react";
+import React, { useContext, useState } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 import ProductData from "../../data/products.json";
 
@@ -19,22 +19,31 @@ const useStyles = makeStyles({
 const Category = () => {
   const classes = useStyles();
   const { setProducts, filterProduct } = useContext(ShopContext);
+  const [currentCategory, setCurrentCategory] = useState("All Products");
+  const [viewAll, setViewAll] = useState(true);
+
+  const ToggleViewAll = () => {
+    return viewAll ? setViewAll(false) : setViewAll(true);
+  };
 
   const categories = [
-    { category: "processors" },
-    { category: "memory" },
-    { category: "motherboard" },
-    { category: "video card" },
-    { category: "case" },
+    { category: "Processors" },
+    { category: "Memory" },
+    { category: "Motherboard" },
+    { category: "Video Card" },
+    { category: "Case" },
   ];
 
   const handleClick = (e) => {
-    setProducts(ProductData);
     filterProduct(e);
+    setCurrentCategory(e);
+    ToggleViewAll();
   };
 
   const handleReset = () => {
     setProducts(ProductData);
+    setCurrentCategory("All Products");
+    ToggleViewAll();
   };
 
   return (
@@ -43,7 +52,7 @@ const Category = () => {
         Shop /
       </Typography>
       <Typography className={classes.main} variant="h4" gutterBottom>
-        All Products
+        {currentCategory}
       </Typography>
       <ButtonGroup
         orientation="vertical"
@@ -52,18 +61,21 @@ const Category = () => {
         variant="text"
         size="large"
       >
-        <Button className={classes.category} onClick={handleReset}>
-          All
-        </Button>
-        {categories.map((item) => (
-          <Button
-            key={item.category}
-            className={classes.category}
-            onClick={() => handleClick(item.category)}
-          >
-            {item.category}
+        {viewAll ? (
+          categories.map((item) => (
+            <Button
+              key={item.category}
+              className={classes.category}
+              onClick={() => handleClick(item.category)}
+            >
+              {item.category}
+            </Button>
+          ))
+        ) : (
+          <Button className={classes.category} onClick={handleReset}>
+            View All Products
           </Button>
-        ))}
+        )}
       </ButtonGroup>
     </div>
   );
