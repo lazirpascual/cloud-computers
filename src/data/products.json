@@ -2,27 +2,59 @@
   "items": [
     {
       "name": "AMD Ryzen 5 5600X",
-      "price": 299.0,
+      "price": 299.99,
       "quantity": 1,
-      "category": "Processors",
+      "category": "processors",
       "imgPath": "https://i.imgur.com/XVadBTJ.png",
       "id": 1
     },
     {
       "name": "AMD Ryzen 5 5800X",
-      "price": 499.0,
+      "price": 499.99,
       "quantity": 1,
-      "category": "Processors",
+      "category": "processors",
       "imgPath": "https://i.imgur.com/xuuS84t.png",
       "id": 2
     },
     {
       "name": "AMD Ryzen 5 5950X",
-      "price": 549.0,
+      "price": 549.99,
       "quantity": 1,
-      "category": "Processors",
+      "category": "processors",
       "imgPath": "https://i.imgur.com/lLaaLpH.png",
       "id": 3
+    },
+    {
+      "name": "Kingston HyperX FURY DDR3",
+      "price": 47.53,
+      "quantity": 1,
+      "category": "memory",
+      "imgPath": "https://i.imgur.com/RO9kJ7y.png",
+      "id": 4
+    },
+    {
+      "name": "Kingston HyperX FURY DDR4",
+      "price": 36.99,
+      "quantity": 1,
+      "category": "memory",
+      "imgPath": "https://i.imgur.com/XO57N8K.png",
+      "id": 5
+    },
+    {
+      "name": "Kingston HyperX FURY DDR4 RGB",
+      "price": 62.95,
+      "quantity": 1,
+      "category": "memory",
+      "imgPath": "https://i.imgur.com/8L0VQoc.png",
+      "id": 6
+    },
+    {
+      "name": "MSI B450 Tomahawk MAX",
+      "price": 114.99,
+      "quantity": 1,
+      "category": "motherboard",
+      "imgPath": "https://i.imgur.com/OUNYe5z.png",
+      "id": 6
     }
   ]
 }
