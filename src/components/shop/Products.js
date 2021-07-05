@@ -8,9 +8,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#f2eeeb",
     maxWidth: 320,
-    margin: 20,
+    margin: 15,
   },
   media: {
     height: 225,
@@ -30,7 +30,7 @@ const Products = () => {
     <Container className={classes.content}>
       <Grid container>
         {products.items.map((product) => (
-          <Card className={classes.root}>
+          <Card className={classes.root} key={product.id}>
             <CardMedia
               className={classes.media}
               component="img"
@@ -41,7 +41,7 @@ const Products = () => {
               <Typography gutterBottom variant="h5" component="h2">
                 {product.name}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body1" color="textSecondary" component="p">
                 ${product.price}
               </Typography>
             </CardContent>

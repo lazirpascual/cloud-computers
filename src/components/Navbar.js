@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 // Material-UI import
 import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Slide from "@material-ui/core/Slide";
+import { Slide, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -17,10 +15,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 100,
   },
   spacing: {
-    fontSize: "20px",
-    margin: 25,
+    fontSize: "25px",
+    marginLeft: 100,
+    marginRight: 100,
     textDecoration: "none",
     color: "inherit",
+  },
+  toolbar: {
+    display: "flex",
+    justifyContent: "center",
+    marginRight: 130,
   },
 }));
 
@@ -32,18 +36,19 @@ const Navbar = () => {
     <div>
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
-          <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
+          <Toolbar className={classes.toolbar}>
             <Link to="/" className={classes.spacing}>
-              Cloud Computers
+              <Typography color="textSecondary" variant="h5">
+                CLOUD COMPUTERS
+              </Typography>
             </Link>
             <Link to="/shop" className={classes.spacing}>
-              Shop
+              <Typography color="textPrimary" variant="h5">
+                Shop
+              </Typography>
             </Link>
             <Link to="/cart" className={classes.spacing}>
-              <LocalMallOutlinedIcon />
+              <LocalMallOutlinedIcon fontSize="large" />
             </Link>
           </Toolbar>
         </AppBar>
