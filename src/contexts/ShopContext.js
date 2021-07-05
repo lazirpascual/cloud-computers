@@ -10,8 +10,15 @@ const ShopContextProvider = (props) => {
     setProducts(ProductData);
   }, []);
 
+  const filterProduct = (category) => {
+    const filteredProduct = products.items.filter(
+      (item) => item.id === category
+    );
+    setProducts(filteredProduct);
+  };
+
   return (
-    <ShopContext.Provider value={{ products, setProducts }}>
+    <ShopContext.Provider value={{ products, filterProduct }}>
       {props.children}
     </ShopContext.Provider>
   );

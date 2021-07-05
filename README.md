@@ -1,6 +1,6 @@
 # Shopping-Website
 
-This is an application that models a shopping website that lets you buy computer components. It was made using Javascript, React JS, and Material-UI.
+This is an application that models a shopping website that lets you buy computer parts. It was made using Javascript, React JS, and Material-UI.
 
 # Live Demo
 
@@ -17,17 +17,17 @@ This is an application that models a shopping website that lets you buy computer
   - Context
 - Material-UI
 
-# Screenshots
+## Screenshots
 
-## Home Page
-
-![preview]()
-
-## Catalog Page
+### Home Page
 
 ![preview]()
 
-## Cart Page
+### Catalog Page
+
+![preview]()
+
+### Cart Page
 
 ![preview]()
 

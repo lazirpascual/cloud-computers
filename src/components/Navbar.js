@@ -23,8 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     marginRight: 130,
+  },
+  navbar: {
+    marginBottom: 200,
   },
 }));
 
@@ -33,7 +36,7 @@ const Navbar = () => {
   const trigger = useScrollTrigger();
 
   return (
-    <div>
+    <div className={classes.navbar}>
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={classes.toolbar}>

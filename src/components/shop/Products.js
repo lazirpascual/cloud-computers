@@ -9,16 +9,13 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#f2eeeb",
-    maxWidth: 320,
+    maxWidth: 600,
     margin: 15,
   },
   media: {
     height: 225,
-    paddingTop: 50,
-    paddingBottom: 50,
-  },
-  content: {
-    marginTop: 200,
+    paddingTop: 25,
+    paddingBottom: 25,
   },
 });
 
@@ -27,25 +24,27 @@ const Products = () => {
   const { products } = useContext(ShopContext);
 
   return (
-    <Container className={classes.content}>
+    <Container>
       <Grid container>
         {products.items.map((product) => (
-          <Card className={classes.root} key={product.id}>
-            <CardMedia
-              className={classes.media}
-              component="img"
-              src={product.imgPath}
-              title={product.name}
-            ></CardMedia>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {product.name}
-              </Typography>
-              <Typography variant="body1" color="textSecondary" component="p">
-                ${product.price}
-              </Typography>
-            </CardContent>
-          </Card>
+          <Grid item xs={12} md={6} lg={4}>
+            <Card className={classes.root} key={product.id}>
+              <CardMedia
+                className={classes.media}
+                component="img"
+                src={product.imgPath}
+                title={product.name}
+              ></CardMedia>
+              <CardContent>
+                <Typography gutterBottom variant="h6" component="h2">
+                  {product.name}
+                </Typography>
+                <Typography variant="body1" color="textSecondary" component="p">
+                  ${product.price}
+                </Typography>
+              </CardContent>
+            </Card>{" "}
+          </Grid>
         ))}
       </Grid>
     </Container>
