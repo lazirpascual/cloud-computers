@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext, useEfect } from "react";
+import { ShopContext } from "../../contexts/ShopContext";
+import ProductData from "../../data/products.json";
 
 // Material-UI import
-import { Typography, Button, ButtonGroup, Box } from "@material-ui/core";
+import { Typography, Button, ButtonGroup } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -16,6 +18,24 @@ const useStyles = makeStyles({
 
 const Category = () => {
   const classes = useStyles();
+  const { setProducts, filterProduct } = useContext(ShopContext);
+
+  const categories = [
+    { category: "processors" },
+    { category: "memory" },
+    { category: "motherboard" },
+    { category: "video card" },
+    { category: "case" },
+  ];
+
+  const handleClick = (e) => {
+    setProducts(ProductData);
+    filterProduct(e);
+  };
+
+  const handleReset = () => {
+    setProducts(ProductData);
+  };
 
   return (
     <div>
@@ -32,11 +52,18 @@ const Category = () => {
         variant="text"
         size="large"
       >
-        <Button className={classes.category}>Processors</Button>
-        <Button className={classes.category}>Memory</Button>
-        <Button className={classes.category}>Motherboards</Button>
-        <Button className={classes.category}>Video Cards</Button>
-        <Button className={classes.category}>Case</Button>
+        <Button className={classes.category} onClick={handleReset}>
+          All
+        </Button>
+        {categories.map((item) => (
+          <Button
+            key={item.category}
+            className={classes.category}
+            onClick={() => handleClick(item.category)}
+          >
+            {item.category}
+          </Button>
+        ))}
       </ButtonGroup>
     </div>
   );

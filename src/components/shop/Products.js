@@ -43,7 +43,7 @@ const Products = () => {
                   ${product.price}
                 </Typography>
               </CardContent>
-            </Card>{" "}
+            </Card>
           </Grid>
         ))}
       </Grid>

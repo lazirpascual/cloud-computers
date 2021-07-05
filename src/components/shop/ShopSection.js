@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Products from "./Products";
 import Category from "./Category";
+import ProductData from "../../data/products.json";
+import { ShopContext } from "../../contexts/ShopContext";
 
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,6 +20,11 @@ const useStyles = makeStyles({
 
 const ShopSection = () => {
   const classes = useStyles();
+  const { setProducts } = useContext(ShopContext);
+
+  useEffect(() => {
+    setProducts(ProductData);
+  }, []);
 
   return (
     <div>
