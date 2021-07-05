@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "name": "AMD Ryzen 5 5600X",
+      "price": 299.0,
+      "quantity": 1,
+      "category": "Processors",
+      "imgPath": "https://i.imgur.com/XVadBTJ.png",
+      "id": 1
+    },
+    {
+      "name": "AMD Ryzen 5 5800X",
+      "price": 499.0,
+      "quantity": 1,
+      "category": "Processors",
+      "imgPath": "https://i.imgur.com/xuuS84t.png",
+      "id": 2
+    },
+    {
+      "name": "AMD Ryzen 5 5950X",
+      "price": 549.0,
+      "quantity": 1,
+      "category": "Processors",
+      "imgPath": "https://i.imgur.com/lLaaLpH.png",
+      "id": 3
+    }
+  ]
+}

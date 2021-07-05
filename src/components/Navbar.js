@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Material-UI import
-import { AppBar, Toolbar, makeStyles, Typography } from "@material-ui/core";
+import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   header: {

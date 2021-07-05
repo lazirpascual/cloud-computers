@@ -1,12 +1,12 @@
 import React from "react";
+import Products from "./Products";
 
 // Material-UI import
-import { Button } from "@material-ui/core";
 
 const ShopSection = () => {
   return (
     <div>
-      <Button>Click Shop</Button>
+      <Products />
     </div>
   );
 };
