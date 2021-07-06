@@ -24,6 +24,7 @@
       "quantity": 1,
       "category": "Processors",
       "imgPath": "https://i.imgur.com/lLaaLpH.png",
+      "imgPreview": "https://i.imgur.com/kf9CMsb.jpg",
       "id": 3
     },
     {
@@ -32,6 +33,7 @@
       "quantity": 1,
       "category": "Memory",
       "imgPath": "https://i.imgur.com/RO9kJ7y.png",
+      "imgPreview": "https://i.imgur.com/QvVzIf6.jpg",
       "id": 4
     },
     {
@@ -40,6 +42,7 @@
       "quantity": 1,
       "category": "Memory",
       "imgPath": "https://i.imgur.com/XO57N8K.png",
+      "imgPreview": "https://i.imgur.com/gZpAjUL.jpg",
       "id": 5
     },
     {
@@ -48,6 +51,7 @@
       "quantity": 1,
       "category": "Memory",
       "imgPath": "https://i.imgur.com/8L0VQoc.png",
+      "imgPreview": "https://i.imgur.com/920tOW9.jpg",
       "id": 6
     },
     {
@@ -56,6 +60,7 @@
       "quantity": 1,
       "category": "Motherboard",
       "imgPath": "https://i.imgur.com/OUNYe5z.png",
+      "imgPreview": "https://i.imgur.com/WwcZg1w.jpg",
       "id": 7
     },
     {
@@ -64,6 +69,7 @@
       "quantity": 1,
       "category": "Motherboard",
       "imgPath": "https://i.imgur.com/SxWzVAx.png",
+      "imgPreview": "https://i.imgur.com/2pPKJV9.jpg",
       "id": 8
     },
     {
@@ -72,6 +78,7 @@
       "quantity": 1,
       "category": "Motherboard",
       "imgPath": "https://i.imgur.com/SZ7jDgh.png",
+      "imgPreview": "https://i.imgur.com/1uoqG6H.jpg",
       "id": 9
     },
     {
@@ -80,6 +87,7 @@
       "quantity": 1,
       "category": "Video Card",
       "imgPath": "https://i.imgur.com/30aJbIL.jpg",
+      "imgPreview": "https://i.imgur.com/FHQ1jbQ.jpg",
       "id": 10
     },
     {
@@ -88,6 +96,7 @@
       "quantity": 1,
       "category": "Video Card",
       "imgPath": "https://i.imgur.com/Ul4frwi.jpg",
+      "imgPreview": "https://i.imgur.com/dhLP0Ys.jpg",
       "id": 11
     },
     {
@@ -96,6 +105,7 @@
       "quantity": 1,
       "category": "Video Card",
       "imgPath": "https://i.imgur.com/xex37JS.jpg",
+      "imgPreview": "https://i.imgur.com/gCuegUp.jpg",
       "id": 12
     },
     {
@@ -104,6 +114,7 @@
       "quantity": 1,
       "category": "Case",
       "imgPath": "https://i.imgur.com/b3ieUZw.jpg",
+      "imgPreview": "https://i.imgur.com/iOrrWY6.jpg",
       "id": 13
     },
     {
@@ -112,6 +123,7 @@
       "quantity": 1,
       "category": "Case",
       "imgPath": "https://i.imgur.com/txxg1H2.jpg",
+      "imgPreview": "https://i.imgur.com/mQFgwsd.jpg",
       "id": 14
     },
     {
@@ -120,6 +132,7 @@
       "quantity": 1,
       "category": "Case",
       "imgPath": "https://i.imgur.com/LfqmqW9.jpg",
+      "imgPreview": "https://i.imgur.com/GrmUQgX.jpg",
       "id": 15
     }
   ]

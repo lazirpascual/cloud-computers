@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
+import MediaPreview from "./MediaPreview";
 
 // Material-UI import
-import { Typography, CardMedia, CardContent, Card } from "@material-ui/core";
+import { Typography, CardContent, Card } from "@material-ui/core";
 import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -22,7 +23,6 @@ const useStyles = makeStyles({
 const Products = () => {
   const classes = useStyles();
   const { products } = useContext(ShopContext);
-  const [show, setShow] = useState(false);
 
   return (
     <Container>
@@ -30,14 +30,7 @@ const Products = () => {
         {products.items.map((product) => (
           <Grid item xs={12} md={6} lg={4}>
             <Card className={classes.root} key={product.id}>
-              <CardMedia
-                onMouseOver={() => setShow(true)}
-                onMouseOut={() => setShow(false)}
-                className={classes.media}
-                component="img"
-                src={product.imgPath}
-                title={product.name}
-              ></CardMedia>
+              <MediaPreview product={product} />
               <CardContent>
                 <Typography gutterBottom variant="h6" component="h2">
                   {product.name}
