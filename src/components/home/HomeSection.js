@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   main: {
     paddingLeft: "5%",
     paddingTop: "20%",
-    color: "white",
+    color: "rgb(248, 244, 240)",
   },
 });
 

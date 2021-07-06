@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "../index.css";
 
 // Material-UI import
 import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
@@ -34,13 +35,16 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
   const classes = useStyles();
   const trigger = useScrollTrigger();
+  // dynamically change color of navbar based on current url
+  const path = useLocation().pathname;
+  const location = path.split("/")[2];
 
   return (
     <div className={classes.navbar}>
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
-          <Toolbar className={classes.toolbar}>
-            <Link to="/react-shopping-website" className={classes.spacing}>
+          <Toolbar className={location}>
+            <Link to="/react-shopping-website/home" className={classes.spacing}>
               <Typography variant="h6">CLOUD COMPUTERS</Typography>
             </Link>
             <Link to="/react-shopping-website/shop" className={classes.spacing}>
