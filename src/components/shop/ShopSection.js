@@ -3,7 +3,7 @@ import Products from "./Products";
 import Category from "./Category";
 import { ShopContext } from "../../contexts/ShopContext";
 import ProductData from "../../data/products.json";
-import Navbar from "../Navbar";
+import "../../index.css";
 
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
@@ -28,8 +28,7 @@ const ShopSection = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
+    <div className="shop-bg">
       <Grid container>
         <Grid className={classes.root} item xs={12} md={6} lg={4}>
           <Category />
