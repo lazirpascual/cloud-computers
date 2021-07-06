@@ -43,8 +43,8 @@ const Navbar = () => {
     <div className={classes.navbar}>
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
-          <Toolbar className={location}>
-            <Link to="/react-shopping-website/home" className={classes.spacing}>
+          <Toolbar className={location ? location : "home"}>
+            <Link to="/react-shopping-website/" className={classes.spacing}>
               <Typography variant="h6">CLOUD COMPUTERS</Typography>
             </Link>
             <Link to="/react-shopping-website/shop" className={classes.spacing}>

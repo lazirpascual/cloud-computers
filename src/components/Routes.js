@@ -10,11 +10,7 @@ const Routes = () => {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route
-          exact
-          path="/react-shopping-website/home"
-          component={HomeSection}
-        />
+        <Route exact path="/react-shopping-website/" component={HomeSection} />
         <Route
           exact
           path="/react-shopping-website/shop"
