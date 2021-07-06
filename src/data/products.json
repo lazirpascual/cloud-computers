@@ -6,6 +6,7 @@
       "quantity": 1,
       "category": "Processors",
       "imgPath": "https://i.imgur.com/XVadBTJ.png",
+      "imgPreview": "https://i.imgur.com/53XOJCb.jpg",
       "id": 1
     },
     {
@@ -14,6 +15,7 @@
       "quantity": 1,
       "category": "Processors",
       "imgPath": "https://i.imgur.com/xuuS84t.png",
+      "imgPreview": "https://i.imgur.com/m4Bppno.jpg",
       "id": 2
     },
     {

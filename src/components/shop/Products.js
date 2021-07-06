@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 
 // Material-UI import
@@ -22,6 +22,7 @@ const useStyles = makeStyles({
 const Products = () => {
   const classes = useStyles();
   const { products } = useContext(ShopContext);
+  const [show, setShow] = useState(false);
 
   return (
     <Container>
@@ -30,6 +31,8 @@ const Products = () => {
           <Grid item xs={12} md={6} lg={4}>
             <Card className={classes.root} key={product.id}>
               <CardMedia
+                onMouseOver={() => setShow(true)}
+                onMouseOut={() => setShow(false)}
                 className={classes.media}
                 component="img"
                 src={product.imgPath}

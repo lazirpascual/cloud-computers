@@ -22,10 +22,12 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "inherit",
   },
-  toolbar: {
-    display: "flex",
-    marginRight: 130,
-    justifyContent: "flex-end",
+  company: {
+    fontSize: "25px",
+    marginLeft: 100,
+    marginRight: "auto",
+    textDecoration: "none",
+    color: "inherit",
   },
   navbar: {
     marginBottom: 200,
@@ -44,7 +46,7 @@ const Navbar = () => {
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={location ? location : "home"}>
-            <Link to="/react-shopping-website/" className={classes.spacing}>
+            <Link to="/react-shopping-website/" className={classes.company}>
               <Typography variant="h6">CLOUD COMPUTERS</Typography>
             </Link>
             <Link to="/react-shopping-website/shop" className={classes.spacing}>

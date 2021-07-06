@@ -8,8 +8,8 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   main: {
-    paddingLeft: "5%",
-    paddingTop: "25%",
+    paddingLeft: 120,
+    paddingTop: "30vh",
     color: "rgb(248, 244, 240)",
   },
   button: {
