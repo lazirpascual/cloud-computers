@@ -40,13 +40,13 @@ const Navbar = () => {
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={classes.toolbar}>
-            <Link to="/" className={classes.spacing}>
+            <Link to="/react-shopping-website" className={classes.spacing}>
               <Typography variant="h6">CLOUD COMPUTERS</Typography>
             </Link>
-            <Link to="/shop" className={classes.spacing}>
+            <Link to="/react-shopping-website/shop" className={classes.spacing}>
               <Typography variant="h6">Shop</Typography>
             </Link>
-            <Link to="/cart" className={classes.spacing}>
+            <Link to="/react-shopping-website/cart" className={classes.spacing}>
               <LocalMallOutlinedIcon fontSize="large" />
             </Link>
           </Toolbar>
