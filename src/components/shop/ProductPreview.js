@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
+import { CartContext } from "../../contexts/CartContext";
 import { useHistory } from "react-router-dom";
 import "../../index.css";
 
@@ -31,6 +32,7 @@ const useStyles = makeStyles({
 const ProductPreview = () => {
   const classes = useStyles();
   const { preview } = useContext(ProductContext);
+  const { addProduct } = useContext(CartContext);
   const history = useHistory();
 
   return (
@@ -72,8 +74,8 @@ const ProductPreview = () => {
             ${preview.price}
           </Typography>
           <Button
+            onClick={() => addProduct(preview)}
             startIcon={<AddShoppingCartIcon />}
-            onClick={() => history.push(`/react-shopping-website/shop`)}
             size="large"
             variant="outlined"
             className={classes.productInfo}

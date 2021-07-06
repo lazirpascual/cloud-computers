@@ -2,6 +2,7 @@ import React from "react";
 import Routes from "./components/Routes";
 import ShopContextProvider from "./contexts/ShopContext";
 import ProductContextProvider from "./contexts/ProductContext";
+import CartContextProvider from "./contexts/CartContext";
 
 // Material-UI import
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
@@ -27,9 +28,11 @@ const App = () => {
     <div>
       <ShopContextProvider>
         <ProductContextProvider>
-          <ThemeProvider theme={theme}>
-            <Routes />
-          </ThemeProvider>
+          <CartContextProvider>
+            <ThemeProvider theme={theme}>
+              <Routes />
+            </ThemeProvider>
+          </CartContextProvider>
         </ProductContextProvider>
       </ShopContextProvider>
     </div>

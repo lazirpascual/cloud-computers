@@ -45,7 +45,7 @@ const Products = () => {
                 <Typography gutterBottom variant="h6" component="h2">
                   {product.name}
                 </Typography>
-                <Typography variant="body" component="p">
+                <Typography variant="body1" component="p">
                   ${product.price}
                 </Typography>
               </CardContent>
