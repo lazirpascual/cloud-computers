@@ -14,14 +14,17 @@ const useStyles = makeStyles({
     marginTop: 40,
   },
   productName: {
-    marginTop: 10,
+    marginTop: 50,
   },
   price: {
-    marginLeft: 200,
-    marginTop: 150,
+    marginLeft: 250,
+    marginTop: 180,
   },
   addCart: {
     marginTop: 50,
+  },
+  image: {
+    marginTop: 20,
   },
 });
 
@@ -44,10 +47,21 @@ const ProductPreview = () => {
           <Typography variant="h6" className={classes.productInfo}>
             Shop / {preview.category}
           </Typography>
-          <Typography variant="h2" className={classes.productName} gutterBottom>
+          <Typography
+            align="center"
+            variant="h3"
+            className={classes.productName}
+            gutterBottom
+          >
             {preview.name}
           </Typography>
-          <img src={preview.productPreview} alt={preview.name} />
+          <Grid container justify="center">
+            <img
+              className={classes.image}
+              src={preview.productPreview}
+              alt={preview.name}
+            />
+          </Grid>
         </Grid>
         <Grid item xs={6} md="auto" lg="auto" className={classes.price}>
           <Typography variant="h6">

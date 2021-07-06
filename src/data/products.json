@@ -17,6 +17,7 @@
       "category": "Processors",
       "imgPath": "https://i.imgur.com/xuuS84t.png",
       "imgPreview": "https://i.imgur.com/m4Bppno.jpg",
+      "productPreview": "https://i.imgur.com/0szXExr.png",
       "id": 2
     },
     {
@@ -26,6 +27,7 @@
       "category": "Processors",
       "imgPath": "https://i.imgur.com/lLaaLpH.png",
       "imgPreview": "https://i.imgur.com/kf9CMsb.jpg",
+      "productPreview": "https://i.imgur.com/AW3qqlX.png",
       "id": 3
     },
     {
@@ -35,6 +37,7 @@
       "category": "Memory",
       "imgPath": "https://i.imgur.com/RO9kJ7y.png",
       "imgPreview": "https://i.imgur.com/QvVzIf6.jpg",
+      "productPreview": "https://i.imgur.com/K81Tm08.png",
       "id": 4
     },
     {
@@ -44,6 +47,7 @@
       "category": "Memory",
       "imgPath": "https://i.imgur.com/XO57N8K.png",
       "imgPreview": "https://i.imgur.com/gZpAjUL.jpg",
+      "productPreview": "https://i.imgur.com/V6Pz7Rc.png",
       "id": 5
     },
     {
@@ -53,6 +57,7 @@
       "category": "Memory",
       "imgPath": "https://i.imgur.com/8L0VQoc.png",
       "imgPreview": "https://i.imgur.com/920tOW9.jpg",
+      "productPreview": "https://i.imgur.com/H2hcsGH.png",
       "id": 6
     },
     {
@@ -62,6 +67,7 @@
       "category": "Motherboard",
       "imgPath": "https://i.imgur.com/OUNYe5z.png",
       "imgPreview": "https://i.imgur.com/WwcZg1w.jpg",
+      "productPreview": "https://i.imgur.com/YvMBi7g.png",
       "id": 7
     },
     {
@@ -71,6 +77,7 @@
       "category": "Motherboard",
       "imgPath": "https://i.imgur.com/SxWzVAx.png",
       "imgPreview": "https://i.imgur.com/2pPKJV9.jpg",
+      "productPreview": "https://i.imgur.com/G6yBbK2.png",
       "id": 8
     },
     {
@@ -80,6 +87,7 @@
       "category": "Motherboard",
       "imgPath": "https://i.imgur.com/SZ7jDgh.png",
       "imgPreview": "https://i.imgur.com/1uoqG6H.jpg",
+      "productPreview": "https://i.imgur.com/lF134wO.png",
       "id": 9
     },
     {
@@ -89,6 +97,7 @@
       "category": "Video Card",
       "imgPath": "https://i.imgur.com/30aJbIL.jpg",
       "imgPreview": "https://i.imgur.com/FHQ1jbQ.jpg",
+      "productPreview": "https://i.imgur.com/4kbseqM.png",
       "id": 10
     },
     {
@@ -98,6 +107,7 @@
       "category": "Video Card",
       "imgPath": "https://i.imgur.com/Ul4frwi.jpg",
       "imgPreview": "https://i.imgur.com/dhLP0Ys.jpg",
+      "productPreview": "https://i.imgur.com/Os0FXl2.png",
       "id": 11
     },
     {
@@ -107,6 +117,7 @@
       "category": "Video Card",
       "imgPath": "https://i.imgur.com/xex37JS.jpg",
       "imgPreview": "https://i.imgur.com/gCuegUp.jpg",
+      "productPreview": "https://i.imgur.com/GGc48yD.png",
       "id": 12
     },
     {
@@ -116,6 +127,7 @@
       "category": "Case",
       "imgPath": "https://i.imgur.com/b3ieUZw.jpg",
       "imgPreview": "https://i.imgur.com/iOrrWY6.jpg",
+      "productPreview": "https://i.imgur.com/x4CmFCt.png",
       "id": 13
     },
     {
@@ -125,6 +137,7 @@
       "category": "Case",
       "imgPath": "https://i.imgur.com/txxg1H2.jpg",
       "imgPreview": "https://i.imgur.com/mQFgwsd.jpg",
+      "productPreview": "https://i.imgur.com/6cRCmi4.png",
       "id": 14
     },
     {
@@ -134,6 +147,7 @@
       "category": "Case",
       "imgPath": "https://i.imgur.com/LfqmqW9.jpg",
       "imgPreview": "https://i.imgur.com/GrmUQgX.jpg",
+      "productPreview": "https://i.imgur.com/AERYN78.png",
       "id": 15
     }
   ]
