@@ -4,7 +4,7 @@ This is an application that models a shopping website that lets you buy computer
 
 # Live Demo
 
-[Live Demo of Application](https://lazirpascual.github.io/react-shopping-website/)
+[Live Demo of Application](https://lazirpascual.github.io/react-shopping-website/home)
 
 ## Tech Stack
 
