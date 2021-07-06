@@ -6,7 +6,7 @@ import "../index.css";
 import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import { Slide, Typography } from "@material-ui/core";
+import { Slide, Typography, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -47,7 +47,9 @@ const Navbar = () => {
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={location ? location : "home"}>
             <Link to="/react-shopping-website/" className={classes.company}>
-              <Typography variant="h6">CLOUD COMPUTERS</Typography>
+              <Typography variant="h6">
+                <Box letterSpacing={4}>CLOUD COMPUTERS</Box>
+              </Typography>
             </Link>
             <Link to="/react-shopping-website/shop" className={classes.spacing}>
               <Typography variant="h6">Shop</Typography>

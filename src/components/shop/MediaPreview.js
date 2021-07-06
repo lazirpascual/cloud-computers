@@ -6,12 +6,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   media: {
-    height: 225,
+    height: 250,
     paddingTop: 25,
     paddingBottom: 25,
   },
   mediaHovered: {
-    height: 225,
+    height: 250,
     paddingTop: 25,
     paddingBottom: 25,
     transform: "scale3d(1.3, 1.3, 1)",
