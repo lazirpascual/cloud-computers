@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import Products from "./Products";
 import Category from "./Category";
+import { ShopContext } from "../../contexts/ShopContext";
+import ProductData from "../../data/products.json";
+import Navbar from "../Navbar";
 
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,9 +21,15 @@ const useStyles = makeStyles({
 
 const ShopSection = () => {
   const classes = useStyles();
+  const { setProducts } = useContext(ShopContext);
+
+  useEffect(() => {
+    setProducts(ProductData);
+  }, []);
 
   return (
     <div>
+      <Navbar />
       <Grid container>
         <Grid className={classes.root} item xs={12} md={6} lg={4}>
           <Category />

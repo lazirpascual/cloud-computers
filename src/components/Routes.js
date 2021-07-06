@@ -8,7 +8,6 @@ import CartSection from "./cart/CartSection";
 const Routes = () => {
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
         <Route exact path="/" component={HomeSection} />
         <Route exact path="/shop" component={ShopSection} />

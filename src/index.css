@@ -1,5 +1,12 @@
-html {
+main-bg {
   background-color: #fffafa;
+}
+
+home-bg {
+  background: url("./images/home-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: auto;
 }
 
 body {

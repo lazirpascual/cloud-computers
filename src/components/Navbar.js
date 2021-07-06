@@ -41,14 +41,10 @@ const Navbar = () => {
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={classes.toolbar}>
             <Link to="/" className={classes.spacing}>
-              <Typography color="inherit" variant="h6">
-                CLOUD COMPUTERS
-              </Typography>
+              <Typography variant="h6">CLOUD COMPUTERS</Typography>
             </Link>
             <Link to="/shop" className={classes.spacing}>
-              <Typography color="inherit" variant="h6">
-                Shop
-              </Typography>
+              <Typography variant="h6">Shop</Typography>
             </Link>
             <Link to="/cart" className={classes.spacing}>
               <LocalMallOutlinedIcon fontSize="large" />
