@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 import MediaPreview from "./MediaPreview";
+import { useHistory } from "react-router-dom";
+import { ProductContext } from "../../contexts/ProductContext";
 
 // Material-UI import
 import { Typography, CardContent, Card } from "@material-ui/core";
@@ -10,32 +12,40 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#f2eeeb",
-    maxWidth: 600,
+    maxWidth: 700,
+    height: 425,
     margin: 15,
-  },
-  media: {
-    height: 225,
-    paddingTop: 25,
-    paddingBottom: 25,
+    cursor: "pointer",
   },
 });
 
 const Products = () => {
   const classes = useStyles();
   const { products } = useContext(ShopContext);
+  const { savePreview } = useContext(ProductContext);
+  const history = useHistory();
+
+  const handleClick = (product) => {
+    savePreview(product);
+    history.push("/react-shopping-website/preview");
+  };
 
   return (
     <Container>
       <Grid container>
         {products.items.map((product) => (
           <Grid item xs={12} md={6} lg={4}>
-            <Card className={classes.root} key={product.id}>
+            <Card
+              onClick={() => handleClick(product)}
+              className={classes.root}
+              key={product.id}
+            >
               <MediaPreview product={product} />
               <CardContent>
                 <Typography gutterBottom variant="h6" component="h2">
                   {product.name}
                 </Typography>
-                <Typography variant="body1" color="textSecondary" component="p">
+                <Typography variant="body" component="p">
                   ${product.price}
                 </Typography>
               </CardContent>

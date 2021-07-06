@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import HomeSection from "./home/HomeSection";
 import ShopSection from "./shop/ShopSection";
 import CartSection from "./cart/CartSection";
+import ProductPreview from "./shop/ProductPreview";
 
 const Routes = () => {
   return (
@@ -20,6 +21,11 @@ const Routes = () => {
           exact
           path="/react-shopping-website/cart"
           component={CartSection}
+        />
+        <Route
+          exact
+          path="/react-shopping-website/preview"
+          component={ProductPreview}
         />
       </Switch>
     </BrowserRouter>
