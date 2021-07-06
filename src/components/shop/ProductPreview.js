@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
 import { useHistory } from "react-router-dom";
+import "../../index.css";
 
 // Material-UI import
 import { Container, Grid, Typography, Button } from "@material-ui/core";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { Box } from "@material-ui/core";
-
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -34,13 +34,14 @@ const ProductPreview = () => {
   const history = useHistory();
 
   return (
-    <Container>
+    <Container className="cart-bg">
       <Grid container direction="row" alignItems="flex-start" spacing={10}>
         <Grid item xs={6} md={6} lg={6}>
           <Button
             onClick={() => history.push(`/react-shopping-website/shop`)}
             size="large"
-            variant="outlined"
+            variant="contained"
+            color="primary"
           >
             Back To Shopping
           </Button>
