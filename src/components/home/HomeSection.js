@@ -4,17 +4,23 @@ import "../../index.css";
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   main: {
     paddingLeft: "5%",
-    paddingTop: "20%",
+    paddingTop: "25%",
     color: "rgb(248, 244, 240)",
+  },
+  button: {
+    marginTop: 20,
   },
 });
 
 const HomeSection = () => {
   const classes = useStyles();
+  const history = useHistory();
+
   return (
     <div className="home-bg">
       <div className={classes.main}>
@@ -24,7 +30,12 @@ const HomeSection = () => {
         <Typography variant="h5" gutterBottom>
           Now available for preorder, shipping December, 2020.
         </Typography>
-        <Button variant="contained" size="large">
+        <Button
+          onClick={() => history.push(`/react-shopping-website/shop`)}
+          className={classes.button}
+          variant="contained"
+          size="large"
+        >
           <Typography className="button" variant="h5" gutterBottom>
             SHOP NOW
           </Typography>
