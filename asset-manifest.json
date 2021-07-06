@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-shopping-website/home/static/css/main.26fd0c38.chunk.css",
-    "main.js": "/react-shopping-website/home/static/js/main.9c24fbbd.chunk.js",
-    "main.js.map": "/react-shopping-website/home/static/js/main.9c24fbbd.chunk.js.map",
-    "runtime-main.js": "/react-shopping-website/home/static/js/runtime-main.e06eb962.js",
-    "runtime-main.js.map": "/react-shopping-website/home/static/js/runtime-main.e06eb962.js.map",
-    "static/js/2.87e7c438.chunk.js": "/react-shopping-website/home/static/js/2.87e7c438.chunk.js",
-    "static/js/2.87e7c438.chunk.js.map": "/react-shopping-website/home/static/js/2.87e7c438.chunk.js.map",
-    "index.html": "/react-shopping-website/home/index.html",
-    "static/css/main.26fd0c38.chunk.css.map": "/react-shopping-website/home/static/css/main.26fd0c38.chunk.css.map",
-    "static/js/2.87e7c438.chunk.js.LICENSE.txt": "/react-shopping-website/home/static/js/2.87e7c438.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/react-shopping-website/home/static/media/home-background.3aed8e8a.jpg"
+    "main.css": "/react-shopping-website/static/css/main.61077d1c.chunk.css",
+    "main.js": "/react-shopping-website/static/js/main.e8b71d92.chunk.js",
+    "main.js.map": "/react-shopping-website/static/js/main.e8b71d92.chunk.js.map",
+    "runtime-main.js": "/react-shopping-website/static/js/runtime-main.dc0efa6a.js",
+    "runtime-main.js.map": "/react-shopping-website/static/js/runtime-main.dc0efa6a.js.map",
+    "static/js/2.87e7c438.chunk.js": "/react-shopping-website/static/js/2.87e7c438.chunk.js",
+    "static/js/2.87e7c438.chunk.js.map": "/react-shopping-website/static/js/2.87e7c438.chunk.js.map",
+    "index.html": "/react-shopping-website/index.html",
+    "static/css/main.61077d1c.chunk.css.map": "/react-shopping-website/static/css/main.61077d1c.chunk.css.map",
+    "static/js/2.87e7c438.chunk.js.LICENSE.txt": "/react-shopping-website/static/js/2.87e7c438.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/react-shopping-website/static/media/home-background.3aed8e8a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e06eb962.js",
+    "static/js/runtime-main.dc0efa6a.js",
     "static/js/2.87e7c438.chunk.js",
-    "static/css/main.26fd0c38.chunk.css",
-    "static/js/main.9c24fbbd.chunk.js"
+    "static/css/main.61077d1c.chunk.css",
+    "static/js/main.e8b71d92.chunk.js"
   ]
 }
