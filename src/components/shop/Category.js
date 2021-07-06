@@ -22,10 +22,6 @@ const Category = () => {
   const [currentCategory, setCurrentCategory] = useState("All Products");
   const [viewAll, setViewAll] = useState(true);
 
-  const ToggleViewAll = () => {
-    return viewAll ? setViewAll(false) : setViewAll(true);
-  };
-
   const categories = [
     { category: "Processors" },
     { category: "Memory" },
@@ -33,6 +29,10 @@ const Category = () => {
     { category: "Video Card" },
     { category: "Case" },
   ];
+
+  const ToggleViewAll = () => {
+    setViewAll(!viewAll);
+  };
 
   const handleClick = (e) => {
     filterProduct(e);

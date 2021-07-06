@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
-    justifyContent: "flex-end",
     marginRight: 130,
+    justifyContent: "flex-end",
   },
   navbar: {
     marginBottom: 200,
@@ -41,12 +41,12 @@ const Navbar = () => {
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={classes.toolbar}>
             <Link to="/" className={classes.spacing}>
-              <Typography color="textSecondary" variant="h5">
+              <Typography color="inherit" variant="h6">
                 CLOUD COMPUTERS
               </Typography>
             </Link>
             <Link to="/shop" className={classes.spacing}>
-              <Typography color="textPrimary" variant="h5">
+              <Typography color="inherit" variant="h6">
                 Shop
               </Typography>
             </Link>
