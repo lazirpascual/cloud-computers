@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 // Material-UI import
 import { Typography, Grid, Button } from "@material-ui/core";
@@ -23,33 +24,37 @@ const useStyles = makeStyles({
     marginTop: 100,
   },
   button: {
+    marginLeft: 36,
     marginTop: 100,
-    width: 200,
   },
 });
 
 const CartSummary = ({ productList, calculateOrderTotal }) => {
   const classes = useStyles();
+  const { calculateTotalQuantity } = useContext(CartContext);
 
   return (
-    <Grid
-      container
-      direction="column"
-      justifyContent="center"
-      alignItems="center"
-      className={classes.summary}
-    >
+    <Grid container direction="column" className={classes.summary}>
       <Typography align="center" variant="h4">
         Order Summary
       </Typography>
       <Divider className={classes.divider} />
       <Typography className={classes.summaryItems} align="center" variant="h6">
-        ITEMS: {productList.length}
+        ITEMS: {calculateTotalQuantity()}
       </Typography>
       <Typography className={classes.summaryItems} align="center" variant="h6">
         TOTAL PRICE: ${calculateOrderTotal()}
       </Typography>
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button
+        style={{
+          fontSize: 22,
+          width: 230,
+          height: 70,
+        }}
+        variant="contained"
+        color="primary"
+        className={classes.button}
+      >
         Checkout
       </Button>
     </Grid>

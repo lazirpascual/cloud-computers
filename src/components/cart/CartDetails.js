@@ -9,13 +9,13 @@ import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles({
   cartDetails: {
     marginTop: 30,
-    marginLeft: 20,
+    marginLeft: 40,
   },
   divider: {
     marginTop: 30,
   },
   heading: {
-    marginLeft: 150,
+    marginLeft: 120,
   },
   cartWidth: {
     maxWidth: "70%",

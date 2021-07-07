@@ -25,7 +25,8 @@ const CartContextProvider = (props) => {
   };
 
   const calculateSubtotal = (product) => {
-    return product.quantity * product.price;
+    // round answer to 2 decimal places
+    return Math.round(product.quantity * product.price * 100) / 100;
   };
 
   const calculateOrderTotal = () => {
@@ -36,6 +37,14 @@ const CartContextProvider = (props) => {
     return sum;
   };
 
+  const calculateTotalQuantity = () => {
+    const count = productList.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.quantity;
+    }, 0);
+
+    return count;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -44,6 +53,7 @@ const CartContextProvider = (props) => {
         deleteProduct,
         calculateSubtotal,
         calculateOrderTotal,
+        calculateTotalQuantity,
       }}
     >
       {props.children}

@@ -6,6 +6,7 @@ import { Snackbar, Button } from "@material-ui/core";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-const AddToCart = ({ preview }) => {
+const AddToCart = ({ preview, setCompleteOrder }) => {
   const classes = useStyles();
   const { addProduct } = useContext(CartContext);
   const [open, setOpen] = useState(false);
@@ -25,6 +26,7 @@ const AddToCart = ({ preview }) => {
   const handleClick = () => {
     addProduct(preview);
     setOpen(true);
+    setCompleteOrder(true);
   };
 
   const handleClose = (event, reason) => {
@@ -51,9 +53,11 @@ const AddToCart = ({ preview }) => {
       >
         Add To Cart
       </Button>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
         <Alert variant="standard" onClose={handleClose} severity="success">
-          {preview.name} has been added to the Cart!
+          <Typography variant="h4">
+            {preview.name} ({preview.quantity}) has been added to the Cart!
+          </Typography>
         </Alert>
       </Snackbar>
     </div>
