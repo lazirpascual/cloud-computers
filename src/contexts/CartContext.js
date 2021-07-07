@@ -34,15 +34,16 @@ const CartContextProvider = (props) => {
   const calculateSubtotal = (product) => {
     // round answer to 2 decimal places
     const subtotal = product.quantity * product.price;
-    return parseFloat(subtotal).toFixed(2);
+    const roundedTotal = Math.round(subtotal * 100) / 100;
+    return roundedTotal;
   };
 
   const calculateOrderTotal = () => {
     const sum = productList.reduce((accumulator, currentValue) => {
       return accumulator + calculateSubtotal(currentValue);
     }, 0);
-
-    return parseFloat(sum).toFixed(2);
+    const roundedSum = Math.round(sum * 100) / 100;
+    return roundedSum;
   };
 
   const calculateTotalQuantity = () => {

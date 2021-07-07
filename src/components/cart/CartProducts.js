@@ -4,24 +4,21 @@ import { ProductContext } from "../../contexts/ProductContext";
 import { useHistory } from "react-router-dom";
 
 // Material-UI import
-import { Typography, Container, Grid, TextField } from "@material-ui/core";
+import { Typography, Container, Grid } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import Divider from "@material-ui/core/Divider";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import { Button } from "@material-ui/core";
+import { Divider, FormControl, Select, MenuItem } from "@material-ui/core";
 
 const useStyles = makeStyles({
   cartDetails: {
-    marginTop: 30,
-    marginLeft: 30,
+    width: 50,
+    marginTop: 20,
+    marginLeft: 40,
   },
   name: {
-    marginTop: 30,
+    width: 250,
+    marginTop: 20,
     marginLeft: 30,
   },
   divider: {
@@ -29,8 +26,8 @@ const useStyles = makeStyles({
   },
   image: {
     cursor: "pointer",
-    width: 120,
-    height: 100,
+    width: 100,
+    height: 70,
   },
 });
 
@@ -60,7 +57,7 @@ const CartProducts = ({ product }) => {
 
   return (
     <Container>
-      <Grid container="center" alignItems="center">
+      <Grid container alignItems="center" justifyContent="space-evenly">
         <img
           onClick={() => handleClick(product)}
           className={classes.image}
@@ -70,13 +67,14 @@ const CartProducts = ({ product }) => {
         <Typography className={classes.name} variant="body1">
           {product.name}
         </Typography>
-        <FormControl className={classes.formControl}>
+        <FormControl className={classes.cartDetails}>
           <Select value={quantity} onChange={handleChange}>
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>
             <MenuItem value={3}>3</MenuItem>
             <MenuItem value={4}>4</MenuItem>
             <MenuItem value={5}>5</MenuItem>
+            <MenuItem value={6}>6</MenuItem>
           </Select>
         </FormControl>
         <Typography className={classes.cartDetails} variant="body1">
@@ -85,11 +83,13 @@ const CartProducts = ({ product }) => {
         <Typography className={classes.cartDetails} variant="body1">
           ${calculateSubtotal(product)}
         </Typography>
-        <IconButton className={classes.cartDetails}>
-          <DeleteForeverIcon
-            onClick={() => deleteProduct(product.id)}
-          ></DeleteForeverIcon>
-        </IconButton>
+        <Grid>
+          <IconButton className={classes.cartDetails}>
+            <DeleteForeverIcon
+              onClick={() => deleteProduct(product.id)}
+            ></DeleteForeverIcon>
+          </IconButton>
+        </Grid>
       </Grid>
       <Divider className={classes.divider} />
     </Container>

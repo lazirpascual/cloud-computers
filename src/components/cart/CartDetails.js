@@ -8,14 +8,18 @@ import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles({
   cartDetails: {
+    fontWeight: "bold",
     marginTop: 30,
-    marginLeft: 40,
+    marginLeft: 42,
   },
   divider: {
     marginTop: 30,
   },
   heading: {
-    marginLeft: 120,
+    fontWeight: "bold",
+    marginTop: 30,
+    marginLeft: 160,
+    marginRight: 130,
   },
   cartWidth: {
     maxWidth: "70%",
@@ -35,19 +39,19 @@ const CartDetails = ({ productList }) => {
   return (
     <Grid item xs="auto" md="auto" lg="auto" className={classes.cartWidth}>
       <Typography variant="h2">Shopping Cart</Typography>
-      <Divider className={classes.divider} />
-      <Grid container className={classes.heading}>
+      <Divider variant="fullWidth" className={classes.divider} />
+      <Grid container>
         <Divider className={classes.divider} />
-        <Typography className={classes.cartDetails} variant="h6">
+        <Typography className={classes.heading} variant="body1">
           Product Details
         </Typography>
-        <Typography className={classes.cartDetails} variant="h6">
+        <Typography className={classes.cartDetails} variant="body1">
           Quantity
         </Typography>
-        <Typography className={classes.cartDetails} variant="h6">
+        <Typography className={classes.cartDetails} variant="body1">
           Price
         </Typography>
-        <Typography className={classes.cartDetails} variant="h6">
+        <Typography className={classes.cartDetails} variant="body1">
           Subtotal
         </Typography>
       </Grid>
