@@ -6,7 +6,17 @@ const CartContextProvider = (props) => {
   const [productList, setProductList] = useState([]);
 
   const addProduct = (newProduct) => {
-    setProductList([...productList, newProduct]);
+    const newList = productList;
+    const existingIndex = newList.findIndex(
+      (item) => item.id === newProduct.id
+    );
+
+    if (existingIndex >= 0) {
+      newList[existingIndex].quantity++;
+      setProductList(newList);
+    } else {
+      setProductList([...productList, newProduct]);
+    }
   };
 
   const deleteProduct = (key) => {
