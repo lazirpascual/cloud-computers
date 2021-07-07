@@ -5,12 +5,19 @@ export const CartContext = createContext();
 const CartContextProvider = (props) => {
   const [productList, setProductList] = useState([]);
 
+  const updateCartState = () => {
+    // function that updates the productList state
+    const filteredList = productList.filter((product) => product);
+    setProductList(filteredList);
+  };
+
   const addProduct = (newProduct) => {
     const newList = productList;
+    // check if item already exists
     const existingIndex = newList.findIndex(
       (item) => item.id === newProduct.id
     );
-
+    // if item exists, +1 quantity, else, add item to list
     if (existingIndex >= 0) {
       newList[existingIndex].quantity++;
       setProductList(newList);
@@ -45,6 +52,17 @@ const CartContextProvider = (props) => {
     return count;
   };
 
+  const updateQuantity = (quantity, key) => {
+    const newList = productList;
+
+    newList.forEach((product) => {
+      if (product.id === key) {
+        product.quantity = quantity;
+      }
+    });
+    setProductList(newList);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -54,6 +72,8 @@ const CartContextProvider = (props) => {
         calculateSubtotal,
         calculateOrderTotal,
         calculateTotalQuantity,
+        updateQuantity,
+        updateCartState,
       }}
     >
       {props.children}

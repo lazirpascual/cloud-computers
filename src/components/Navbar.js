@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import "../index.css";
@@ -37,11 +37,18 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
-  const { productList } = useContext(CartContext);
+  const { productList, calculateTotalQuantity, updateCartState } =
+    useContext(CartContext);
   const trigger = useScrollTrigger();
   // dynamically change color of navbar based on current url
   const path = useLocation().pathname;
   const location = path.split("/")[2];
+  const [quantity, setQuantity] = useState(calculateTotalQuantity());
+
+  // useEffect(() => {
+  //   setQuantity(calculateTotalQuantity());
+  //   updateCartState();
+  // }, []);
 
   return (
     <div className={classes.navbar}>
@@ -57,7 +64,8 @@ const Navbar = () => {
               <Typography variant="h6">Shop</Typography>
             </Link>
             <Link to="/react-shopping-website/cart" className={classes.spacing}>
-              <LocalMallOutlinedIcon fontSize="large" /> ({productList.length})
+              <LocalMallOutlinedIcon fontSize="large" /> (
+              {calculateTotalQuantity()})
             </Link>
           </Toolbar>
         </AppBar>
