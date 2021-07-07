@@ -71,7 +71,6 @@ const CartProducts = ({ product }) => {
           {product.name}
         </Typography>
         <FormControl className={classes.formControl}>
-          <InputLabel>Quantity</InputLabel>
           <Select value={quantity} onChange={handleChange}>
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>

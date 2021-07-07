@@ -37,18 +37,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
-  const { productList, calculateTotalQuantity, updateCartState } =
-    useContext(CartContext);
+  const { calculateTotalQuantity } = useContext(CartContext);
   const trigger = useScrollTrigger();
   // dynamically change color of navbar based on current url
   const path = useLocation().pathname;
   const location = path.split("/")[2];
-  const [quantity, setQuantity] = useState(calculateTotalQuantity());
-
-  // useEffect(() => {
-  //   setQuantity(calculateTotalQuantity());
-  //   updateCartState();
-  // }, []);
 
   return (
     <div className={classes.navbar}>
