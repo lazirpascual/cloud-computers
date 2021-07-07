@@ -14,8 +14,28 @@ const CartContextProvider = (props) => {
     setProductList(filteredList);
   };
 
+  const calculateSubtotal = (product) => {
+    return product.quantity * product.price;
+  };
+
+  const calculateOrderTotal = () => {
+    const sum = productList.reduce((accumulator, currentValue) => {
+      return accumulator + calculateSubtotal(currentValue);
+    }, 0);
+
+    return sum;
+  };
+
   return (
-    <CartContext.Provider value={{ productList, addProduct, deleteProduct }}>
+    <CartContext.Provider
+      value={{
+        productList,
+        addProduct,
+        deleteProduct,
+        calculateSubtotal,
+        calculateOrderTotal,
+      }}
+    >
       {props.children}
     </CartContext.Provider>
   );

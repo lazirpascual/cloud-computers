@@ -11,7 +11,7 @@ import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles({
   cartDetails: {
     marginTop: 30,
-    marginLeft: 140,
+    marginLeft: 30,
   },
   name: {
     marginTop: 30,
@@ -28,11 +28,11 @@ const useStyles = makeStyles({
 
 const CartProducts = ({ product }) => {
   const classes = useStyles();
-  const { deleteProduct } = useContext(CartContext);
+  const { deleteProduct, calculateSubtotal } = useContext(CartContext);
 
   return (
     <Container>
-      <Grid container="center">
+      <Grid container="center" alignItems="center">
         <img
           className={classes.image}
           src={product.productPreview}
@@ -45,10 +45,10 @@ const CartProducts = ({ product }) => {
           {product.quantity}
         </Typography>
         <Typography className={classes.cartDetails} variant="body1">
-          {product.price}
+          ${product.price}
         </Typography>
         <Typography className={classes.cartDetails} variant="body1">
-          $0.00
+          ${calculateSubtotal(product)}
         </Typography>
         <IconButton className={classes.cartDetails}>
           <DeleteForeverIcon
