@@ -41,5 +41,3 @@ This is an application that models a shopping website that lets you buy computer
 ### Cart Page
 
 ![preview](https://i.imgur.com/4CUGLN2.jpg)
-
-### What I Learned
