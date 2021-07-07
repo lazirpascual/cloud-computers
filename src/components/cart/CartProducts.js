@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
 // Material-UI import
-import { Typography, Container, Grid, Button } from "@material-ui/core";
+import { Typography, Container, Grid } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -21,8 +21,8 @@ const useStyles = makeStyles({
     marginTop: 10,
   },
   image: {
-    width: 200,
-    height: 125,
+    width: 120,
+    height: 100,
   },
 });
 
@@ -35,7 +35,7 @@ const CartProducts = ({ product }) => {
       <Grid container="center">
         <img
           className={classes.image}
-          src={product.imgPath}
+          src={product.productPreview}
           alt={product.name}
         />
         <Typography className={classes.name} variant="body1">

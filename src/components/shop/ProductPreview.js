@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
-import { CartContext } from "../../contexts/CartContext";
 import { useHistory } from "react-router-dom";
+import AddToCart from "./AddToCart";
 import "../../index.css";
 
 // Material-UI import
 import { Container, Grid, Typography, Button } from "@material-ui/core";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -32,7 +31,6 @@ const useStyles = makeStyles({
 const ProductPreview = () => {
   const classes = useStyles();
   const { preview } = useContext(ProductContext);
-  const { addProduct } = useContext(CartContext);
   const history = useHistory();
 
   return (
@@ -73,20 +71,7 @@ const ProductPreview = () => {
           <Typography variant="h3" className={classes.productInfo}>
             ${preview.price}
           </Typography>
-          <Button
-            onClick={() => addProduct(preview)}
-            startIcon={<AddShoppingCartIcon />}
-            size="large"
-            variant="outlined"
-            className={classes.productInfo}
-            style={{
-              width: 250,
-              height: 70,
-            }}
-            color="secondary"
-          >
-            Add To Cart
-          </Button>
+          <AddToCart preview={preview} />
         </Grid>
       </Grid>
     </Container>
