@@ -17,18 +17,29 @@ This is an application that models a shopping website that lets you buy computer
   - Context
 - Material-UI
 
+## Features
+
+- Clean user interface with smooth animations
+- Add and remove products from the shopping cart
+- Filter products by categories
+- Responsive design
+
 ## Screenshots
 
 ### Home Page
 
-![preview]()
+![preview](https://i.imgur.com/0pAb97F.jpg)
 
 ### Catalog Page
 
-![preview]()
+![preview](https://i.imgur.com/XQhYkkj.jpg)
+
+### Product Page
+
+![preview](https://i.imgur.com/ZBkOfbS.jpg)
 
 ### Cart Page
 
-![preview]()
+![preview](https://i.imgur.com/4CUGLN2.jpg)
 
 ### What I Learned
