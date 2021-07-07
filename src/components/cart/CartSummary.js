@@ -30,6 +30,7 @@ const useStyles = makeStyles({
 
 const CartSummary = ({ productList, calculateOrderTotal }) => {
   const classes = useStyles();
+
   return (
     <Grid
       container

@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { ProductContext } from "../../contexts/ProductContext";
+import { useHistory } from "react-router-dom";
 
 // Material-UI import
 import { Typography, Container, Grid } from "@material-ui/core";
@@ -21,6 +23,7 @@ const useStyles = makeStyles({
     marginTop: 10,
   },
   image: {
+    cursor: "pointer",
     width: 120,
     height: 100,
   },
@@ -29,11 +32,19 @@ const useStyles = makeStyles({
 const CartProducts = ({ product }) => {
   const classes = useStyles();
   const { deleteProduct, calculateSubtotal } = useContext(CartContext);
+  const { savePreview } = useContext(ProductContext);
+  const history = useHistory();
+
+  const handleClick = (productPreview) => {
+    savePreview(productPreview);
+    history.push("/react-shopping-website/preview");
+  };
 
   return (
     <Container>
       <Grid container="center" alignItems="center">
         <img
+          onClick={() => handleClick(product)}
           className={classes.image}
           src={product.productPreview}
           alt={product.name}
