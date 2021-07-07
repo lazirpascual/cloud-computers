@@ -9,8 +9,13 @@ const CartContextProvider = (props) => {
     setProductList([...productList, newProduct]);
   };
 
+  const deleteProduct = (key) => {
+    const filteredList = productList.filter((product) => product.id !== key);
+    setProductList(filteredList);
+  };
+
   return (
-    <CartContext.Provider value={{ productList, addProduct }}>
+    <CartContext.Provider value={{ productList, addProduct, deleteProduct }}>
       {props.children}
     </CartContext.Provider>
   );
