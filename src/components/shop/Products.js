@@ -33,7 +33,7 @@ const Products = () => {
   return (
     <Container>
       <Grid container>
-        {products.items.map((product) => (
+        {products.map((product) => (
           <Grid item xs={12} md={6} lg={4}>
             <Card
               onClick={() => handleClick(product)}

@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import Products from "./Products";
 import Category from "./Category";
 import { ShopContext } from "../../contexts/ShopContext";
-import ProductData from "../../data/products.json";
+import productService from "../../services/products";
 import "../../index.css";
 
 // Material-UI import
@@ -24,7 +24,9 @@ const ShopSection = () => {
   const { setProducts } = useContext(ShopContext);
 
   useEffect(() => {
-    setProducts(ProductData);
+    productService.getAll().then((initialProducts) => {
+      setProducts(initialProducts);
+    });
   }, []);
 
   return (

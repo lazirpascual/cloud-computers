@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 import ProductData from "../../data/products.json";
+import productService from "../../services/products";
 
 // Material-UI import
 import { Typography, Button, ButtonGroup } from "@material-ui/core";
@@ -41,7 +42,9 @@ const Category = () => {
   };
 
   const handleReset = () => {
-    setProducts(ProductData);
+    productService.getAll().then((initialProducts) => {
+      setProducts(initialProducts);
+    });
     setCurrentCategory("All Products");
     ToggleViewAll();
   };

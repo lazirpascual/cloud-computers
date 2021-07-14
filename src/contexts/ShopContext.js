@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
-import ProductData from "../data/products.json";
+import productService from "../services/products";
 
 export const ShopContext = createContext();
 
@@ -7,7 +7,9 @@ const ShopContextProvider = (props) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    setProducts(ProductData);
+    productService.getAll().then((initialProducts) => {
+      setProducts(initialProducts);
+    });
   }, []);
 
   const filterProduct = (category) => {
