@@ -13,10 +13,7 @@ const ShopContextProvider = (props) => {
   }, []);
 
   const filterProduct = (category) => {
-    const filteredProduct = {
-      items: {},
-    };
-    filteredProduct.items = products.items.filter(
+    const filteredProduct = products.filter(
       (item) => item.category === category
     );
     setProducts(filteredProduct);
