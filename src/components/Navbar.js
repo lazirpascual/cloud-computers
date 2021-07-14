@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     boxShadow: "0px 0px 0px 0px",
     marginTop: 100,
+    height: 0,
   },
   spacing: {
     fontSize: "25px",
