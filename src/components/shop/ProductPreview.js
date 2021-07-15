@@ -76,7 +76,7 @@ const ProductPreview = () => {
           <AddToCart preview={preview} setCompleteOrder={setCompleteOrder} />
           {completeOrder && (
             <Button
-              onClick={() => history.push(`/react-shopping-website/cart`)}
+              onClick={() => history.push(`/cart`)}
               startIcon={<CheckCircleOutlineIcon />}
               size="large"
               variant="outlined"
