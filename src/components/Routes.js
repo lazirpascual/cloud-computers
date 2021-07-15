@@ -11,22 +11,10 @@ const Routes = () => {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route exact path="/react-shopping-website/" component={HomeSection} />
-        <Route
-          exact
-          path="/react-shopping-website/shop"
-          component={ShopSection}
-        />
-        <Route
-          exact
-          path="/react-shopping-website/cart"
-          component={CartSection}
-        />
-        <Route
-          exact
-          path="/react-shopping-website/preview"
-          component={ProductPreview}
-        />
+        <Route exact path="/" component={HomeSection} />
+        <Route exact path="/shop" component={ShopSection} />
+        <Route exact path="/cart" component={CartSection} />
+        <Route exact path="/preview" component={ProductPreview} />
       </Switch>
     </BrowserRouter>
   );

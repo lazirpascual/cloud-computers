@@ -42,22 +42,22 @@ const Navbar = () => {
   const trigger = useScrollTrigger();
   // dynamically change color of navbar based on current url
   const path = useLocation().pathname;
-  const location = path.split("/")[2];
+  const location = path.split("/")[1];
 
   return (
     <div className={classes.navbar}>
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar position="fixed" className={classes.header}>
           <Toolbar className={location ? location : "home"}>
-            <Link to="/react-shopping-website/" className={classes.company}>
+            <Link to="/" className={classes.company}>
               <Typography variant="h6">
                 <Box letterSpacing={4}>CLOUD COMPUTERS</Box>
               </Typography>
             </Link>
-            <Link to="/react-shopping-website/shop" className={classes.spacing}>
+            <Link to="/shop" className={classes.spacing}>
               <Typography variant="h6">Shop</Typography>
             </Link>
-            <Link to="/react-shopping-website/cart" className={classes.spacing}>
+            <Link to="/cart" className={classes.spacing}>
               <LocalMallOutlinedIcon fontSize="large" /> (
               {calculateTotalQuantity()})
             </Link>
