@@ -1,0 +1,3 @@
+[submodule "shopping-website-backend"]
+	path = shopping-website-backend
+	url = git@github.com:lazirpascual/shopping-website-backend.git
