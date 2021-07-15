@@ -1,26 +1,28 @@
 # Shopping-Website
 
-This is an application that models a shopping website that lets you buy computer parts. It was made using Javascript, React JS, and Material-UI.
+This is a fullstack MERN application that models an e-commerce website that lets you buy computer parts. Uses a REST API I made that holds the product and cart data, stored in a non-relational database. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI.
 
 # Live Demo
 
-[Live Demo of Application](https://lazirpascual.github.io/react-shopping-website/)
+[Live Demo of Application](https://cloudcomputers.herokuapp.com/)
 
 ## Tech Stack
 
-| <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/react.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/material-ui.svg" width="40"> |
-| :--------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+| <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/react.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@4.25.0/icons/node-dot-js.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/express.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/mongodb.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/material-ui.svg" width="40"> |
+| :--------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 
 - React JS
   - Routers
-  - Hooks
-  - Context
+  - Context API
+- Node JS
+- Express
+- MongoDB
 - Material-UI
 
 ## Features
 
 - Clean user interface with smooth animations
-- Add and remove products from the shopping cart
+- Add, remove, and update products from the shopping cart
 - Filter products by categories
 - Responsive design
 
