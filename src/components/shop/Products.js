@@ -27,7 +27,7 @@ const Products = () => {
 
   const handleClick = (product) => {
     savePreview(product);
-    history.push("/react-shopping-website/preview");
+    history.push("/preview");
   };
 
   return (

@@ -31,7 +31,7 @@ const HomeSection = () => {
           Now available for preorder, shipping December, 2020.
         </Typography>
         <Button
-          onClick={() => history.push(`/react-shopping-website/shop`)}
+          onClick={() => history.push(`/shop`)}
           className={classes.button}
           variant="contained"
           size="large"

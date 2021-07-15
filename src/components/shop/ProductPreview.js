@@ -40,7 +40,7 @@ const ProductPreview = () => {
       <Grid container direction="row" alignItems="flex-start" spacing={10}>
         <Grid item xs={6} md={6} lg={6}>
           <Button
-            onClick={() => history.push(`/react-shopping-website/shop`)}
+            onClick={() => history.push(`/shop`)}
             size="large"
             variant="contained"
             color="primary"

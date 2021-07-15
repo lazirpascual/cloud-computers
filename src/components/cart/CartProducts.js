@@ -47,7 +47,7 @@ const CartProducts = ({ product }) => {
 
   const handleClick = (productPreview) => {
     savePreview(productPreview);
-    history.push("/react-shopping-website/preview");
+    history.push("/preview");
   };
 
   const handleChange = (e) => {
