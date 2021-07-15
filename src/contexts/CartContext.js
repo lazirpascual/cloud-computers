@@ -22,7 +22,7 @@ const CartContextProvider = (props) => {
     const newList = productList;
     // check if item already exists
     const existingIndex = newList.findIndex(
-      (item) => item.id === newProduct.id
+      (item) => item.name === newProduct.name
     );
     // if item exists, +1 quantity, else, add item to list
     if (existingIndex >= 0) {

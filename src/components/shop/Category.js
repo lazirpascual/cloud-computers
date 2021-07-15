@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
-import ProductData from "../../data/products.json";
 import productService from "../../services/products";
 
 // Material-UI import
