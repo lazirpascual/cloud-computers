@@ -1,6 +1,6 @@
 {
-  "name": "react-shopping-website",
-  "homepage": "http://lazirpascual.github.io/react-shopping-website",
+  "name": "shopping-website",
+  "homepage": "http://lazirpascual.github.io/shopping-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
