@@ -1,9 +1,16 @@
-import React, { useState, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
+import cartService from "../services/cartitems";
 
 export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
   const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    cartService.getAll().then((initialCartList) => {
+      setProductList(initialCartList);
+    });
+  }, []);
 
   const updateCartState = () => {
     // function that updates the productList state
@@ -22,13 +29,35 @@ const CartContextProvider = (props) => {
       newList[existingIndex].quantity++;
       setProductList(newList);
     } else {
-      setProductList([...productList, newProduct]);
+      cartService.create(newProduct).then((returnedProduct) => {
+        setProductList([...productList, returnedProduct]);
+      });
     }
   };
 
   const deleteProduct = (key) => {
-    const filteredList = productList.filter((product) => product.id !== key);
-    setProductList(filteredList);
+    if (window.confirm("Remove This Product?")) {
+      cartService.remove(key).then(() => {
+        setProductList(productList.filter((product) => product.id !== key));
+      });
+    }
+  };
+
+  const updateQuantity = (newQuantity, product) => {
+    const updatedProduct = { ...product, quantity: newQuantity };
+
+    cartService
+      .update(product.id, updatedProduct)
+      .then((returnedProduct) => {
+        setProductList(
+          productList.map((newProduct) =>
+            newProduct.id !== product.id ? newProduct : returnedProduct
+          )
+        );
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
   };
 
   const calculateSubtotal = (product) => {
@@ -52,17 +81,6 @@ const CartContextProvider = (props) => {
     }, 0);
 
     return count;
-  };
-
-  const updateQuantity = (quantity, key) => {
-    const newList = productList;
-
-    newList.forEach((product) => {
-      if (product.id === key) {
-        product.quantity = quantity;
-      }
-    });
-    setProductList(newList);
   };
 
   return (

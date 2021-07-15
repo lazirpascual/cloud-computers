@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
   image: {
     cursor: "pointer",
-    width: 100,
+    width: 80,
     height: 70,
   },
 });
@@ -40,7 +40,7 @@ const CartProducts = ({ product }) => {
   const [quantity, setQuantity] = useState(product.quantity);
 
   useEffect(() => {
-    updateQuantity(quantity, product.id);
+    updateQuantity(quantity, product);
     // update state so that we can see updated quantity right away
     updateCartState();
   }, [quantity]);
