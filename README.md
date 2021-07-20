@@ -28,9 +28,9 @@ This is a fullstack MERN application that models an e-commerce website that lets
 
 ## Development Process
 
-- Frontend
+- Frontend  
   This project was initially created with only a frontend in mind. My goal was to build a project that would further enhance my React skills by using React Routers to navigate to different pages throughout my application and by using the Context API to globally manage state. Additionaly, I decided to use a component library called Material-UI to style my application.
-- Adding a Backend
+- Adding a Backend  
   After initially building my application with a frontend, I decided that I had enough knowledge in React to finally configure and connect my application to a backend. After some research, I decided to adapt the MERN stack to turn my static application into a fullstack project. First, I used Node JS and Express to create a REST API that would hold the list of products in the shop as well as the list of products inside the cart. Then, I used MongoDB and Mongoose to connect the backend to a non-relational database that would indefinitely save the contents (products & cart items) of my application.
 
 ## Screenshots
