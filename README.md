@@ -4,7 +4,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 
 ## Live Demo & Backend
 
-[Live Demo of Application](https://cloudcomputers.herokuapp.com/)
+[Live Demo of Application](https://cloudcomputers.herokuapp.com/) <br />
 [Backend Repo](https://github.com/lazirpascual/shopping-website-backend)
 
 ## Tech Stack
