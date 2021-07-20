@@ -1,10 +1,11 @@
 # Shopping-Website
 
-This is a fullstack MERN application that models an e-commerce website that lets you buy computer parts. Uses a REST API I made that holds the product and cart data, stored in a non-relational database. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI.
+This is a fullstack MERN application that models an e-commerce website that lets you buy computer parts. Uses a REST API I made that holds the product and cart data, stored in a non-relational database. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
 
-## Live Demo & Backend
+**[Live Demo of Application]**(https://cloudcomputers.herokuapp.com/)
 
-[Live Demo of Application](https://cloudcomputers.herokuapp.com/) <br />
+## Backend
+
 [Backend Repo](https://github.com/lazirpascual/shopping-website-backend)
 
 ## Tech Stack
