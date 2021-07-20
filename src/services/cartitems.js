@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "/api/cartitems";
+const baseUrl = "https://cloudcomputers.herokuapp.com/api/cartitems";
 
 const getAll = () => {
   const request = axios.get(baseUrl);
