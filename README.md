@@ -6,6 +6,10 @@ This is a fullstack MERN application that models an e-commerce website that lets
 
 [Live Demo of Application](https://cloudcomputers.herokuapp.com/)
 
+# Backend
+
+[Backend Repo](https://github.com/lazirpascual/shopping-website-backend)
+
 ## Tech Stack
 
 | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/react.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@4.25.0/icons/node-dot-js.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/express.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/mongodb.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/material-ui.svg" width="40"> |
@@ -22,6 +26,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 - Heroku & Netlify
   - Frontend: Hosted in Netlify
   - Backend: Hosted in Heroku
+- Jest
 
 ## Features
 
