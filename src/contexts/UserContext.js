@@ -19,19 +19,15 @@ const UserContextProvider = (props) => {
   }, []);
 
   const loginToApp = async (username, password) => {
-    try {
-      const user = await loginService.login({
-        username,
-        password,
-      });
+    const user = await loginService.login({
+      username,
+      password,
+    });
 
-      window.localStorage.setItem("loggedUser", JSON.stringify(user));
-      userCartService.setToken(user.token);
-      setUser(user);
-      return user;
-    } catch (exception) {
-      console.log("Wrong credentials");
-    }
+    window.localStorage.setItem("loggedUser", JSON.stringify(user));
+    userCartService.setToken(user.token);
+    setUser(user);
+    return user;
   };
 
   return (

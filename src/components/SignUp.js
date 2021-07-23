@@ -91,7 +91,7 @@ export default function SignUp() {
       const errorMessage = `Invalid username or password: Must be at least 5 chars in length`;
       setOpen(true);
       setErrorMessage(errorMessage);
-      console.log(errorMessage);
+      console.log(exception);
     }
   };
 
