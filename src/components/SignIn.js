@@ -64,12 +64,14 @@ export default function SignIn() {
     event.preventDefault();
 
     try {
-      loginToApp(username, password);
+      const loginSuccess = await loginToApp(username, password);
       setUsername("");
       setPassword("");
-      history.push(`/`);
+      if (loginSuccess) {
+        history.push(`/`);
+      }
     } catch (exception) {
-      console.log("Wrong credentials");
+      console.log("Invalid username or password");
     }
   };
 

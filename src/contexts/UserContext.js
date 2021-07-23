@@ -28,6 +28,7 @@ const UserContextProvider = (props) => {
       window.localStorage.setItem("loggedUser", JSON.stringify(user));
       userCartService.setToken(user.token);
       setUser(user);
+      return user;
     } catch (exception) {
       console.log("Wrong credentials");
     }

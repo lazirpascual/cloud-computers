@@ -10,7 +10,7 @@ import LogInOutButton from "./LogInOutButton";
 const useStyles = makeStyles({
   main: {
     paddingLeft: 120,
-    paddingTop: "22vh",
+    paddingTop: "25vh",
     color: "rgb(248, 244, 240)",
   },
   button: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     marginRight: 25,
   },
   greeting: {
-    marginTop: 100,
+    marginTop: 80,
   },
 });
 

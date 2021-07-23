@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { useHistory } from "react-router-dom";
 
 // Material-UI import
 import { Typography, Grid, Button } from "@material-ui/core";
@@ -32,6 +33,7 @@ const useStyles = makeStyles({
 const CartSummary = ({ productList, calculateOrderTotal }) => {
   const classes = useStyles();
   const { calculateTotalQuantity } = useContext(CartContext);
+  const history = useHistory();
 
   return (
     <Grid container direction="column" className={classes.summary}>
@@ -46,6 +48,7 @@ const CartSummary = ({ productList, calculateOrderTotal }) => {
         TOTAL PRICE: ${calculateOrderTotal()}
       </Typography>
       <Button
+        onClick={() => history.push(`/checkout`)}
         style={{
           fontSize: 22,
           width: 230,

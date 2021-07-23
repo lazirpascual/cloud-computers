@@ -67,7 +67,7 @@ export default function SignUp() {
     event.preventDefault();
 
     try {
-      await userService.signup({
+      const signupSuccess = await userService.signup({
         username,
         password,
         name,
@@ -80,10 +80,14 @@ export default function SignUp() {
       setLastName("");
 
       // after signing up, log user in
-      loginToApp(username, password);
-      history.push(`/`);
+      const loginSuccess = await loginToApp(username, password);
+      if (signupSuccess && loginSuccess) {
+        history.push(`/`);
+      }
     } catch (exception) {
-      console.log("Invalid username or password");
+      console.log(
+        "Invalid username or password: Must be at least 5 chars in length"
+      );
     }
   };
 

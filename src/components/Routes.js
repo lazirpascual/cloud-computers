@@ -7,6 +7,7 @@ import CartSection from "./cart/CartSection";
 import ProductPreview from "./shop/ProductPreview";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
+import Checkout from "./cart/checkout/Checkout";
 
 const Routes = () => {
   return (
@@ -19,6 +20,7 @@ const Routes = () => {
         <Route exact path="/preview" component={ProductPreview} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/checkout" component={Checkout} />
       </Switch>
     </BrowserRouter>
   );
