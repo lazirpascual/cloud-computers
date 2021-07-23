@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import { useHistory } from "react-router-dom";
 
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Button } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import LogInOutButton from "./LogInOutButton";
 
 const useStyles = makeStyles({
   main: {
@@ -24,19 +25,7 @@ const useStyles = makeStyles({
 const HomeSection = () => {
   const classes = useStyles();
   const history = useHistory();
-  const { user, setUser } = useContext(UserContext);
-
-  const handleLogout = (params) => {
-    window.localStorage.removeItem("loggedUser");
-    setUser(null);
-  };
-
-  const handleLogin = (params) => {
-    history.push(`/signin`);
-  };
-
-  const loginText = user ? `Logout` : `Login`;
-  const loginFunction = user ? handleLogout : handleLogin;
+  const { user } = useContext(UserContext);
 
   return (
     <div className="home-bg">
@@ -67,16 +56,12 @@ const HomeSection = () => {
             Register
           </Typography>
         </Button>
-        <Button
-          onClick={loginFunction}
+        <LogInOutButton
           className={classes.button}
           variant="contained"
           size="large"
-        >
-          <Typography className="button" variant="h5" gutterBottom>
-            {loginText}
-          </Typography>
-        </Button>
+          textVariant="h5"
+        ></LogInOutButton>
         {user ? (
           <div className={classes.greeting}>
             <Typography variant="h2">Welcome {user.name},</Typography>

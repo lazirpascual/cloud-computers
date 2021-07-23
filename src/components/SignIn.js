@@ -69,6 +69,7 @@ export default function SignIn() {
       });
 
       window.localStorage.setItem("loggedUser", JSON.stringify(user));
+
       userCartService.setToken(user.token);
       setUser(user);
       setUsername("");
@@ -136,7 +137,7 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

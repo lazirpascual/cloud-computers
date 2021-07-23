@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
-import "../index.css";
+import LogInOutButton from "./home/LogInOutButton";
 
 // Material-UI import
 import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
   spacing: {
     fontSize: "25px",
-    marginLeft: 100,
-    marginRight: 100,
+    marginLeft: 35,
+    marginRight: 35,
     textDecoration: "none",
     color: "inherit",
   },
@@ -61,6 +61,12 @@ const Navbar = () => {
               <LocalMallOutlinedIcon fontSize="large" /> (
               {calculateTotalQuantity()})
             </Link>
+            <LogInOutButton
+              className={classes.spacing}
+              variant="text"
+              size="small"
+              textVariant="h6"
+            ></LogInOutButton>
           </Toolbar>
         </AppBar>
       </Slide>
