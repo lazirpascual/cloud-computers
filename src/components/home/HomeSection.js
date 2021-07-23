@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   },
   button: {
     marginTop: 20,
+    marginRight: 25,
   },
 });
 
@@ -38,6 +39,26 @@ const HomeSection = () => {
         >
           <Typography className="button" variant="h5" gutterBottom>
             SHOP NOW
+          </Typography>
+        </Button>
+        <Button
+          onClick={() => history.push(`/signup`)}
+          className={classes.button}
+          variant="contained"
+          size="large"
+        >
+          <Typography className="button" variant="h5" gutterBottom>
+            Register
+          </Typography>
+        </Button>
+        <Button
+          onClick={() => history.push(`/shop`)}
+          className={classes.button}
+          variant="contained"
+          size="large"
+        >
+          <Typography className="button" variant="h5" gutterBottom>
+            Login
           </Typography>
         </Button>
       </div>
