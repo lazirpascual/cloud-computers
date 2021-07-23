@@ -1,16 +1,33 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import cartService from "../services/cartitems";
+import userService from "../services/users";
+import userItemsService from "../services/useritems";
+import { UserContext } from "./UserContext";
 
 export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
   const [productList, setProductList] = useState([]);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
-    cartService.getAll().then((initialCartList) => {
+    const getDemoCart = async (event) => {
+      const initialCartList = await cartService.getAll();
       setProductList(initialCartList);
-    });
-  }, []);
+    };
+
+    const getUserCart = async (event) => {
+      const initialCartList = await userItemsService.getAll();
+      const userCartList = initialCartList.filter(
+        (product) => user.name === product.user.name
+      );
+      console.log(user);
+      console.log(initialCartList);
+      setProductList(userCartList);
+    };
+
+    user ? getUserCart() : getDemoCart();
+  }, [user]);
 
   const updateCartState = () => {
     // function that updates the productList state
@@ -19,6 +36,8 @@ const CartContextProvider = (props) => {
   };
 
   const addProduct = (newProduct) => {
+    const service = user ? userItemsService : cartService;
+
     const newList = productList;
     // check if item already exists
     const existingIndex = newList.findIndex(
@@ -29,24 +48,28 @@ const CartContextProvider = (props) => {
       newList[existingIndex].quantity++;
       setProductList(newList);
     } else {
-      cartService.create(newProduct).then((returnedProduct) => {
+      service.create(newProduct).then((returnedProduct) => {
         setProductList([...productList, returnedProduct]);
       });
     }
   };
 
   const deleteProduct = (key) => {
+    const service = user ? userItemsService : cartService;
+
     if (window.confirm("Remove This Product?")) {
-      cartService.remove(key).then(() => {
+      service.remove(key).then(() => {
         setProductList(productList.filter((product) => product.id !== key));
       });
     }
   };
 
   const updateQuantity = (newQuantity, product) => {
+    const service = user ? userItemsService : cartService;
     const updatedProduct = { ...product, quantity: newQuantity };
+    console.log(product);
 
-    cartService
+    service
       .update(product.id, updatedProduct)
       .then((returnedProduct) => {
         setProductList(
@@ -79,7 +102,6 @@ const CartContextProvider = (props) => {
     const count = productList.reduce((accumulator, currentValue) => {
       return accumulator + currentValue.quantity;
     }, 0);
-
     return count;
   };
 

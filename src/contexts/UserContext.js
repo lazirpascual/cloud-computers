@@ -4,7 +4,7 @@ import userCartService from "../services/useritems";
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedUser");
