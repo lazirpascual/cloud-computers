@@ -88,7 +88,7 @@ export default function SignUp() {
         history.push(`/`);
       }
     } catch (exception) {
-      const errorMessage = `Invalid username or password: Must be at least 5 chars in length`;
+      const errorMessage = `Invalid Username or Password: Must be at least 5 chars in length`;
       setOpen(true);
       setErrorMessage(errorMessage);
       console.log(exception);

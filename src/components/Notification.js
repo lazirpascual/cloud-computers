@@ -21,7 +21,7 @@ const Notification = ({ message, open, setOpen }) => {
     <div>
       <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
         <Alert variant="standard" onClose={handleClose} severity="error">
-          <Typography variant="h4">{message}</Typography>
+          <Typography variant="h5">{message}</Typography>
         </Alert>
       </Snackbar>
     </div>

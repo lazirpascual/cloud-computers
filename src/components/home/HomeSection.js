@@ -68,7 +68,7 @@ const HomeSection = () => {
           <div className={classes.greeting}>
             <Typography variant="h2">Welcome {user.name},</Typography>
             <Typography variant="h6">
-              Exclusive offer -15% this week on select items.
+              Exclusive offer: -15% this week on select items.
             </Typography>
           </div>
         )}

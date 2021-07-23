@@ -5,7 +5,22 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-export default function AddressForm() {
+export default function AddressForm({
+  name,
+  lastName,
+  address,
+  city,
+  province,
+  postalCode,
+  country,
+  setName,
+  setLastName,
+  setAddress,
+  setCity,
+  setProvince,
+  setPostalCode,
+  setCountry,
+}) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -14,6 +29,8 @@ export default function AddressForm() {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <TextField
+            onChange={(e) => setName(e.target.value)}
+            value={name}
             required
             id="firstName"
             name="firstName"
@@ -24,6 +41,8 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            onChange={(e) => setLastName(e.target.value)}
+            value={lastName}
             required
             id="lastName"
             name="lastName"
@@ -34,6 +53,8 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12}>
           <TextField
+            onChange={(e) => setAddress(e.target.value)}
+            value={address}
             required
             id="address1"
             name="address1"
@@ -53,6 +74,8 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            onChange={(e) => setCity(e.target.value)}
+            value={city}
             required
             id="city"
             name="city"
@@ -63,14 +86,18 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            id="state"
-            name="state"
+            onChange={(e) => setProvince(e.target.value)}
+            value={province}
+            id="province"
+            name="province"
             label="State/Province/Region"
             fullWidth
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            onChange={(e) => setPostalCode(e.target.value)}
+            value={postalCode}
             required
             id="zip"
             name="zip"
@@ -81,6 +108,8 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            onChange={(e) => setCountry(e.target.value)}
+            value={country}
             required
             id="country"
             name="country"

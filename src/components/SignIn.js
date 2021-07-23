@@ -75,7 +75,7 @@ export default function SignIn() {
         history.push(`/`);
       }
     } catch (exception) {
-      const errorMessage = `Invalid username or password`;
+      const errorMessage = `Invalid Username or Password`;
       setOpen(true);
       setErrorMessage(errorMessage);
       console.log(errorMessage);

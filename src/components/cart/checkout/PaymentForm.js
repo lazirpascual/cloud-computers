@@ -5,7 +5,12 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-export default function PaymentForm() {
+export default function PaymentForm({
+  cardNumber,
+  setCardNumber,
+  expiryDate,
+  setExpiryDate,
+}) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -23,6 +28,8 @@ export default function PaymentForm() {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            onChange={(e) => setCardNumber(e.target.value)}
+            value={cardNumber}
             required
             id="cardNumber"
             label="Card number"
@@ -32,9 +39,11 @@ export default function PaymentForm() {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            onChange={(e) => setExpiryDate(e.target.value)}
+            value={expiryDate}
             required
             id="expDate"
-            label="Expiry date"
+            label="Expiry date (mm/yyyy)"
             fullWidth
             autoComplete="cc-exp"
           />

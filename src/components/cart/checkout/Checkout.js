@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -66,19 +66,6 @@ const useStyles = makeStyles((theme) => ({
 
 const steps = ["Shipping address", "Payment details", "Review your order"];
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-      return <PaymentForm />;
-    case 2:
-      return <Review />;
-    default:
-      throw new Error("Unknown step");
-  }
-}
-
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -90,6 +77,69 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [country, setCountry] = useState("");
+
+  const addressInfo = {
+    name,
+    lastName,
+    address,
+    city,
+    province,
+    postalCode,
+    country,
+  };
+
+  const [cardNumber, setCardNumber] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+
+  const cardInfo = {
+    cardNumber,
+    expiryDate,
+  };
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <AddressForm
+            name={name}
+            lastName={lastName}
+            address={address}
+            city={city}
+            province={province}
+            postalCode={postalCode}
+            country={country}
+            setName={setName}
+            setLastName={setLastName}
+            setAddress={setAddress}
+            setCity={setCity}
+            setProvince={setProvince}
+            setPostalCode={setPostalCode}
+            setCountry={setCountry}
+          />
+        );
+      case 1:
+        return (
+          <PaymentForm
+            cardNumber={cardNumber}
+            setCardNumber={setCardNumber}
+            expiryDate={expiryDate}
+            setExpiryDate={setExpiryDate}
+          />
+        );
+      case 2:
+        return <Review addressInfo={addressInfo} cardInfo={cardInfo} />;
+      default:
+        throw new Error("Unknown step");
+    }
+  }
 
   return (
     <React.Fragment>
