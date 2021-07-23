@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useHistory } from "react-router-dom";
+import Notification from "./Notification";
 
 // Material-UI import
 import Avatar from "@material-ui/core/Avatar";
@@ -60,6 +61,9 @@ export default function SignIn() {
   const { loginToApp } = useContext(UserContext);
   const history = useHistory();
 
+  const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("sdf");
+
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -71,12 +75,16 @@ export default function SignIn() {
         history.push(`/`);
       }
     } catch (exception) {
-      console.log("Invalid username or password");
+      const errorMessage = `Invalid username or password`;
+      setOpen(true);
+      setErrorMessage(errorMessage);
+      console.log(errorMessage);
     }
   };
 
   return (
     <Container component="main" maxWidth="xs">
+      <Notification message={errorMessage} open={open} setOpen={setOpen} />
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>

@@ -46,7 +46,7 @@ const HomeSection = () => {
             SHOP NOW
           </Typography>
         </Button>
-        {!user ? (
+        {!user && (
           <Button
             onClick={() => history.push(`/signup`)}
             className={classes.button}
@@ -54,24 +54,24 @@ const HomeSection = () => {
             size="large"
           >
             <Typography className="button" variant="h5" gutterBottom>
-              Register
+              Sign Up
             </Typography>
           </Button>
-        ) : null}
+        )}
         <LogInOutButton
           className={classes.button}
           variant="contained"
           size="large"
           textVariant="h5"
         ></LogInOutButton>
-        {user ? (
+        {user && (
           <div className={classes.greeting}>
             <Typography variant="h2">Welcome {user.name},</Typography>
             <Typography variant="h6">
               Exclusive offer -15% this week on select items.
             </Typography>
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );

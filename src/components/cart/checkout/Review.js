@@ -51,14 +51,14 @@ export default function Review() {
               secondary={`Quantity: ${product.quantity}`}
             />
             <Typography variant="body2">
-              {calculateSubtotal(product)}
+              ${calculateSubtotal(product)}
             </Typography>
           </ListItem>
         ))}
         <ListItem className={classes.listItem}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" className={classes.total}>
-            {calculateOrderTotal()}
+            ${calculateOrderTotal()}
           </Typography>
         </ListItem>
       </List>

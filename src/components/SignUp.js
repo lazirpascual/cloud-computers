@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import userService from "../services/users";
 import { UserContext } from "../contexts/UserContext";
+import Notification from "./Notification";
 
 // Material-UI import
 import Avatar from "@material-ui/core/Avatar";
@@ -63,6 +64,9 @@ export default function SignUp() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleSignUp = async (event) => {
     event.preventDefault();
 
@@ -73,7 +77,6 @@ export default function SignUp() {
         name,
         lastName,
       });
-
       setUsername("");
       setPassword("");
       setName("");
@@ -85,14 +88,16 @@ export default function SignUp() {
         history.push(`/`);
       }
     } catch (exception) {
-      console.log(
-        "Invalid username or password: Must be at least 5 chars in length"
-      );
+      const errorMessage = `Invalid username or password: Must be at least 5 chars in length`;
+      setOpen(true);
+      setErrorMessage(errorMessage);
+      console.log(errorMessage);
     }
   };
 
   return (
     <Container component="main" maxWidth="xs">
+      <Notification message={errorMessage} open={open} setOpen={setOpen} />
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
