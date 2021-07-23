@@ -29,7 +29,7 @@ const LogInOutButton = ({ variant, size, className, textVariant }) => {
       variant={variant}
       size={size}
     >
-      <Typography className="button" variant={textVariant} gutterBottom>
+      <Typography variant={textVariant} gutterBottom>
         {loginText}
       </Typography>
     </Button>

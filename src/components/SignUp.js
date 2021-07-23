@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import userService from "../services/users";
+import loginService from "../services/login";
+import userCartService from "../services/useritems";
+import { UserContext } from "../contexts/UserContext";
+
+// Material-UI import
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -44,10 +51,43 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  cursor: {
+    cursor: "pointer",
+  },
 }));
 
 export default function SignUp() {
   const classes = useStyles();
+  const history = useHistory();
+  const { loginToApp } = useContext(UserContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  const handleSignUp = async (event) => {
+    event.preventDefault();
+
+    try {
+      const signUpInfo = await userService.signup({
+        username,
+        password,
+        name,
+        lastName,
+      });
+
+      setUsername("");
+      setPassword("");
+      setName("");
+      setLastName("");
+
+      // after signing up, log user in
+      loginToApp(username, password);
+      history.push(`/`);
+    } catch (exception) {
+      console.log("Invalid username or password");
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,10 +99,12 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form onSubmit={handleSignUp} className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) => setName(e.target.value)}
+                value={name}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -75,6 +117,8 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
                 variant="outlined"
                 required
                 fullWidth
@@ -86,17 +130,21 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+                id="username"
+                label="username"
+                name="username"
+                autoComplete="username"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 variant="outlined"
                 required
                 fullWidth
@@ -125,7 +173,11 @@ export default function SignUp() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/signin" variant="body2">
+              <Link
+                className={classes.cursor}
+                onClick={() => history.push(`/signin`)}
+                variant="body2"
+              >
                 Already have an account? Sign in
               </Link>
             </Grid>

@@ -50,28 +50,23 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  cursor: {
+    cursor: "pointer",
+  },
 }));
 
 export default function SignIn() {
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { setUser } = useContext(UserContext);
+  const { loginToApp } = useContext(UserContext);
   const history = useHistory();
 
   const handleLogin = async (event) => {
     event.preventDefault();
 
     try {
-      const user = await loginService.login({
-        username,
-        password,
-      });
-
-      window.localStorage.setItem("loggedUser", JSON.stringify(user));
-
-      userCartService.setToken(user.token);
-      setUser(user);
+      loginToApp(username, password);
       setUsername("");
       setPassword("");
       history.push(`/`);
@@ -137,7 +132,11 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/signup" variant="body2">
+              <Link
+                className={classes.cursor}
+                onClick={() => history.push(`/signup`)}
+                variant="body2"
+              >
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
