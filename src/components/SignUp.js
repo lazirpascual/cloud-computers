@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import userService from "../services/users";
-import loginService from "../services/login";
-import userCartService from "../services/useritems";
 import { UserContext } from "../contexts/UserContext";
 
 // Material-UI import
@@ -69,7 +67,7 @@ export default function SignUp() {
     event.preventDefault();
 
     try {
-      const signUpInfo = await userService.signup({
+      await userService.signup({
         username,
         password,
         name,

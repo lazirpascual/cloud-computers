@@ -1,6 +1,4 @@
 import React, { useState, useContext } from "react";
-import loginService from "../services/login";
-import userCartService from "../services/useritems";
 import { UserContext } from "../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 
