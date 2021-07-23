@@ -46,16 +46,18 @@ const HomeSection = () => {
             SHOP NOW
           </Typography>
         </Button>
-        <Button
-          onClick={() => history.push(`/signup`)}
-          className={classes.button}
-          variant="contained"
-          size="large"
-        >
-          <Typography className="button" variant="h5" gutterBottom>
-            Register
-          </Typography>
-        </Button>
+        {!user ? (
+          <Button
+            onClick={() => history.push(`/signup`)}
+            className={classes.button}
+            variant="contained"
+            size="large"
+          >
+            <Typography className="button" variant="h5" gutterBottom>
+              Register
+            </Typography>
+          </Button>
+        ) : null}
         <LogInOutButton
           className={classes.button}
           variant="contained"
