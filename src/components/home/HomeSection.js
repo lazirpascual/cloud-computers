@@ -52,7 +52,7 @@ const HomeSection = () => {
           </Typography>
         </Button>
         <Button
-          onClick={() => history.push(`/shop`)}
+          onClick={() => history.push(`/signin`)}
           className={classes.button}
           variant="contained"
           size="large"
