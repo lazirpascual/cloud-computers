@@ -9,12 +9,15 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles({
   main: {
     paddingLeft: 120,
-    paddingTop: "35vh",
+    paddingTop: "22vh",
     color: "rgb(248, 244, 240)",
   },
   button: {
     marginTop: 20,
     marginRight: 25,
+  },
+  greeting: {
+    marginTop: 100,
   },
 });
 
@@ -75,7 +78,12 @@ const HomeSection = () => {
           </Typography>
         </Button>
         {user ? (
-          <Typography variant="h2">Welcome {user.name}</Typography>
+          <div className={classes.greeting}>
+            <Typography variant="h2">Welcome {user.name},</Typography>
+            <Typography variant="h6">
+              Exclusive offer -15% this week on select items.
+            </Typography>
+          </div>
         ) : null}
       </div>
     </div>

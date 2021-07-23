@@ -1,6 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import cartService from "../services/cartitems";
-import userService from "../services/users";
 import userItemsService from "../services/useritems";
 import { UserContext } from "./UserContext";
 
@@ -21,8 +20,6 @@ const CartContextProvider = (props) => {
       const userCartList = initialCartList.filter(
         (product) => user.name === product.user.name
       );
-      console.log(user);
-      console.log(initialCartList);
       setProductList(userCartList);
     };
 
@@ -67,7 +64,6 @@ const CartContextProvider = (props) => {
   const updateQuantity = (newQuantity, product) => {
     const service = user ? userItemsService : cartService;
     const updatedProduct = { ...product, quantity: newQuantity };
-    console.log(product);
 
     service
       .update(product.id, updatedProduct)
