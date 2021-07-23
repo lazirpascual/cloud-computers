@@ -1,5 +1,5 @@
-import React from "react";
-import "../../index.css";
+import React, { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,6 +21,19 @@ const useStyles = makeStyles({
 const HomeSection = () => {
   const classes = useStyles();
   const history = useHistory();
+  const { user, setUser } = useContext(UserContext);
+
+  const handleLogout = (params) => {
+    window.localStorage.removeItem("loggedUser");
+    setUser(null);
+  };
+
+  const handleLogin = (params) => {
+    history.push(`/signin`);
+  };
+
+  const loginText = user ? `Logout` : `Login`;
+  const loginFunction = user ? handleLogout : handleLogin;
 
   return (
     <div className="home-bg">
@@ -52,15 +65,18 @@ const HomeSection = () => {
           </Typography>
         </Button>
         <Button
-          onClick={() => history.push(`/signin`)}
+          onClick={loginFunction}
           className={classes.button}
           variant="contained"
           size="large"
         >
           <Typography className="button" variant="h5" gutterBottom>
-            Login
+            {loginText}
           </Typography>
         </Button>
+        {user ? (
+          <Typography variant="h2">Welcome {user.name}</Typography>
+        ) : null}
       </div>
     </div>
   );

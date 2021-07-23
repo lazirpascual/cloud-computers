@@ -1,4 +1,10 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import loginService from "../services/login";
+import userCartService from "../services/useritems";
+import { UserContext } from "../contexts/UserContext";
+import { useHistory } from "react-router-dom";
+
+// Material-UI import
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -17,8 +23,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://cloudcomputers.netlify.app/">
+        Cloud Computers
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -48,6 +54,30 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { setUser } = useContext(UserContext);
+  const history = useHistory();
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    try {
+      const user = await loginService.login({
+        username,
+        password,
+      });
+
+      window.localStorage.setItem("loggedUser", JSON.stringify(user));
+      userCartService.setToken(user.token);
+      setUser(user);
+      setUsername("");
+      setPassword("");
+      history.push(`/`);
+    } catch (exception) {
+      console.log("Wrong credentials");
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,19 +89,23 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form onSubmit={handleLogin} className={classes.form} noValidate>
           <TextField
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
             autoFocus
           />
           <TextField
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
             variant="outlined"
             margin="normal"
             required
