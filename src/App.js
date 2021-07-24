@@ -4,25 +4,8 @@ import ShopContextProvider from "./contexts/ShopContext";
 import ProductContextProvider from "./contexts/ProductContext";
 import CartContextProvider from "./contexts/CartContext";
 import UserContextProvider from "./contexts/UserContext";
-
-// Material-UI import
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#778899",
-    },
-    secondary: {
-      main: "#006400",
-    },
-  },
-  typography: {
-    h6: {
-      fontFamily: "Montserrat, sans-serif",
-    },
-  },
-});
+import { ThemeProvider } from "@material-ui/core";
+import theme from "./AppStyles";
 
 const App = () => {
   return (

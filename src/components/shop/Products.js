@@ -3,25 +3,9 @@ import { ShopContext } from "../../contexts/ShopContext";
 import MediaPreview from "./MediaPreview";
 import { useHistory } from "react-router-dom";
 import { ProductContext } from "../../contexts/ProductContext";
-
-// Material-UI import
 import { Typography, CardContent, Card } from "@material-ui/core";
 import { Container, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: "#f2eeeb",
-    maxWidth: 700,
-    height: 425,
-    margin: 15,
-    cursor: "pointer",
-  },
-  text: {
-    paddingTop: 80,
-    paddingLeft: 100,
-  },
-});
+import useStyles from "./styles";
 
 const Products = () => {
   const classes = useStyles();
@@ -42,7 +26,7 @@ const Products = () => {
             <Grid item xs={12} md={6} lg={4}>
               <Card
                 onClick={() => handleClick(product)}
-                className={classes.root}
+                className={classes.rootProducts}
                 key={product.id}
               >
                 <MediaPreview product={product} />

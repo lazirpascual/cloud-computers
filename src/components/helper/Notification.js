@@ -1,6 +1,4 @@
 import React from "react";
-
-// Material-UI import
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Typography } from "@material-ui/core";

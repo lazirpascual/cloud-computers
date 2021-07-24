@@ -2,8 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ProductContext } from "../../contexts/ProductContext";
 import { useHistory } from "react-router-dom";
-
-// Material-UI import
 import { Typography, Container, Grid } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";

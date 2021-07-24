@@ -1,26 +1,9 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
-
-// Material-UI import
-import { makeStyles } from "@material-ui/core/styles";
+import useStyles from "./styles";
 import { Typography, Button } from "@material-ui/core";
 import LogInOutButton from "./LogInOutButton";
-
-const useStyles = makeStyles({
-  main: {
-    paddingLeft: 120,
-    paddingTop: "25vh",
-    color: "rgb(248, 244, 240)",
-  },
-  button: {
-    marginTop: 20,
-    marginRight: 25,
-  },
-  greeting: {
-    marginTop: 80,
-  },
-});
 
 const HomeSection = () => {
   const classes = useStyles();

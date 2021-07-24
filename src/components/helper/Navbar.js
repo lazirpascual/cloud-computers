@@ -2,39 +2,11 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import LogInOutButton from "../home/LogInOutButton";
-
-// Material-UI import
-import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { Slide, Typography, Box } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  header: {
-    backgroundColor: "inherit",
-    color: "black",
-    boxShadow: "0px 0px 0px 0px",
-    marginTop: 100,
-    height: 0,
-  },
-  spacing: {
-    fontSize: "25px",
-    marginLeft: 35,
-    marginRight: 35,
-    textDecoration: "none",
-    color: "inherit",
-  },
-  company: {
-    fontSize: "25px",
-    marginLeft: 100,
-    marginRight: "auto",
-    textDecoration: "none",
-    color: "inherit",
-  },
-  navbar: {
-    marginBottom: 200,
-  },
-}));
+import useStyles from "./styles";
 
 const Navbar = () => {
   const classes = useStyles();

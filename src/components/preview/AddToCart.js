@@ -1,22 +1,14 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
-
-// Material-UI import
 import { Snackbar, Button } from "@material-ui/core";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import MuiAlert from "@material-ui/lab/Alert";
-import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
+import useStyles from "./styles";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
-
-const useStyles = makeStyles({
-  productInfo: {
-    marginTop: 40,
-  },
-});
 
 const AddToCart = ({ preview, setCompleteOrder }) => {
   const classes = useStyles();
@@ -44,7 +36,7 @@ const AddToCart = ({ preview, setCompleteOrder }) => {
         startIcon={<AddShoppingCartIcon />}
         size="large"
         variant="outlined"
-        className={classes.productInfo}
+        className={classes.cartProductInfo}
         style={{
           width: 250,
           height: 70,

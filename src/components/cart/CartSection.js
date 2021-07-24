@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import CartSummary from "../../components/cart/CartSummary";
 import CartDetails from "../../components/cart/CartDetails";
-
-// Material-UI import
 import { Container, Grid } from "@material-ui/core";
 
 const CartSection = () => {

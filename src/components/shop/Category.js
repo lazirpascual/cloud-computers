@@ -1,28 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
 import Search from "./Search";
-
-// Material-UI import
-import { Typography, Button, ButtonGroup, TextField } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  buttons: {
-    marginTop: 130,
-  },
-  category: {
-    fontSize: "17px",
-    justifyContent: "flex-start",
-  },
-  main: {
-    paddingBottom: 20,
-  },
-});
+import { Typography, Button, ButtonGroup } from "@material-ui/core";
+import useStyles from "./styles";
 
 const Category = () => {
   const classes = useStyles();
-  const { products, setProducts, filterProduct } = useContext(ShopContext);
+  const { setProducts, filterProduct } = useContext(ShopContext);
   const [currentCategory, setCurrentCategory] = useState("All Products");
   const [viewAll, setViewAll] = useState(true);
 
@@ -55,7 +40,7 @@ const Category = () => {
   return (
     <div>
       <Typography variant="p">Shop /</Typography>
-      <Typography className={classes.main} variant="h4" gutterBottom>
+      <Typography className={classes.mainCategory} variant="h4" gutterBottom>
         {currentCategory}
       </Typography>
       <Search />

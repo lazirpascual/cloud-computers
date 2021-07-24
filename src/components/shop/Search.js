@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
-
-// Material-UI import
 import { TextField } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 

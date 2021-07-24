@@ -3,20 +3,8 @@ import Products from "./Products";
 import Category from "./Category";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
-
-// Material-UI import
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: "30%",
-    paddingLeft: "10%",
-  },
-  main: {
-    maxWidth: "70%",
-  },
-});
+import useStyles from "./styles";
 
 const ShopSection = () => {
   const classes = useStyles();

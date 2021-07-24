@@ -1,7 +1,5 @@
 import React from "react";
 import CartProducts from "./CartProducts";
-
-// Material-UI import
 import { Typography, Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import useStyles from "./styles";

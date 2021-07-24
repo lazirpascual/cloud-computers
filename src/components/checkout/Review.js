@@ -1,23 +1,11 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
-import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Grid from "@material-ui/core/Grid";
-
-const useStyles = makeStyles((theme) => ({
-  listItem: {
-    padding: theme.spacing(1, 0),
-  },
-  total: {
-    fontWeight: 700,
-  },
-  title: {
-    marginTop: theme.spacing(2),
-  },
-}));
+import useStyles from "./styles";
 
 export default function Review({ addressInfo, cardInfo }) {
   const classes = useStyles();

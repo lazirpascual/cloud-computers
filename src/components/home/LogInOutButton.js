@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
-
-// Material-UI import
 import { Button } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 

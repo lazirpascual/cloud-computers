@@ -2,31 +2,10 @@ import React, { useContext, useState } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
 import { useHistory } from "react-router-dom";
 import AddToCart from "./AddToCart";
-
-// Material-UI import
 import { Container, Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
-
-const useStyles = makeStyles({
-  productInfo: {
-    marginTop: 40,
-  },
-  productName: {
-    marginTop: 50,
-  },
-  price: {
-    marginLeft: 250,
-    marginTop: 180,
-  },
-  addCart: {
-    marginTop: 50,
-  },
-  image: {
-    marginTop: 20,
-  },
-});
+import useStyles from "./styles";
 
 const ProductPreview = () => {
   const classes = useStyles();

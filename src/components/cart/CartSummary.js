@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { useHistory } from "react-router-dom";
-
-// Material-UI import
 import { Typography, Grid, Button } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import useStyles from "./styles";
