@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   text: {
     paddingTop: 80,
-    paddingLeft: 150,
+    paddingLeft: 100,
   },
 });
 
@@ -60,7 +60,7 @@ const Products = () => {
         ) : (
           <Typography
             align="center"
-            color="primary"
+            color="textSecondary"
             className={classes.text}
             variant="h4"
           >

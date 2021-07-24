@@ -27,6 +27,12 @@ const UserContextProvider = (props) => {
     window.localStorage.setItem("loggedUser", JSON.stringify(user));
     userCartService.setToken(user.token);
     setUser(user);
+
+    // log user out after 1 hour
+    setTimeout(() => {
+      window.localStorage.removeItem("loggedUser");
+      setUser(null);
+    }, 1000 * 60 * 60);
     return user;
   };
 
