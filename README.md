@@ -1,6 +1,6 @@
 # Shopping-Website
 
-This is a fullstack MERN application that models an e-commerce website that lets you buy computer parts. Uses a REST API I made that holds the product and cart data, stored in a non-relational database. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
+This is a fullstack MERN application that models an e-commerce website that lets you buy computer parts. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
 
 [Live Demo of Application](https://cloudcomputers.netlify.app/)
 
@@ -29,8 +29,9 @@ This is a fullstack MERN application that models an e-commerce website that lets
 ## Features
 
 - Responsive design which includes a clean user interface with smooth animations
+- User registration/login
 - Add, remove, and update products from the shopping cart
-- Filter products by categories
+- Search products by name and filter products by categories in the shop
 
 ## Development Process
 
@@ -52,11 +53,11 @@ This is a fullstack MERN application that models an e-commerce website that lets
 
 ### Home Page
 
-![preview](https://i.imgur.com/0pAb97F.jpg)
+![preview](https://i.imgur.com/Zhy1Xpi.jpg)
 
 ### Catalog Page
 
-![preview](https://i.imgur.com/XQhYkkj.jpg)
+![preview](https://i.imgur.com/07f9pMg.jpg)
 
 ### Product Page
 
@@ -65,3 +66,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 ### Cart Page
 
 ![preview](https://i.imgur.com/4CUGLN2.jpg)
+
+### Checkout Page
+
+![preview](https://i.imgur.com/Xn0gved.jpg)

@@ -22,7 +22,10 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://cloudcomputers.netlify.app/">
+      <Link
+        color="inherit"
+        href="https://github.com/lazirpascual/shopping-website"
+      >
         Cloud Computers
       </Link>{" "}
       {new Date().getFullYear()}
