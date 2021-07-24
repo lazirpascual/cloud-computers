@@ -4,7 +4,17 @@ import Category from "./Category";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
 import Grid from "@material-ui/core/Grid";
-import useStyles from "./styles";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: "30%",
+    paddingLeft: "10%",
+  },
+  main: {
+    maxWidth: "70%",
+  },
+});
 
 const ShopSection = () => {
   const classes = useStyles();
