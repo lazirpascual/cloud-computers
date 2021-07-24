@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
 import { useHistory } from "react-router-dom";
 import AddToCart from "./AddToCart";
-import "../../index.css";
 
 // Material-UI import
 import { Container, Grid, Typography, Button } from "@material-ui/core";

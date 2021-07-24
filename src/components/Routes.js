@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./helper/Navbar";
 import HomeSection from "./home/HomeSection";
 import ShopSection from "./shop/ShopSection";
 import CartSection from "./cart/CartSection";
-import ProductPreview from "./shop/ProductPreview";
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
-import Checkout from "./cart/checkout/Checkout";
+import ProductPreview from "./preview/ProductPreview";
+import SignUp from "./signup/SignUp";
+import SignIn from "./signin/SignIn";
+import Checkout from "./checkout/Checkout";
 
 const Routes = () => {
   return (

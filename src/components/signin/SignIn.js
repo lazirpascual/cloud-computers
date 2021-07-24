@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
-import Notification from "./Notification";
+import Notification from "../helper/Notification";
 
 // Material-UI import
 import Avatar from "@material-ui/core/Avatar";

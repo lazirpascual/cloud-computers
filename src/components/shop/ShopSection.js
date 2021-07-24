@@ -3,12 +3,10 @@ import Products from "./Products";
 import Category from "./Category";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
-import "../../index.css";
 
 // Material-UI import
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {

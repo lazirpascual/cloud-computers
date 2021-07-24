@@ -6,30 +6,14 @@ import { useHistory } from "react-router-dom";
 // Material-UI import
 import { Typography, Container, Grid } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import { Divider, FormControl, Select, MenuItem } from "@material-ui/core";
-
-const useStyles = makeStyles({
-  cartDetails: {
-    width: 50,
-    marginTop: 20,
-    marginLeft: 40,
-  },
-  name: {
-    width: 250,
-    marginTop: 20,
-    marginLeft: 30,
-  },
-  divider: {
-    marginTop: 10,
-  },
-  image: {
-    cursor: "pointer",
-    width: 80,
-    height: 70,
-  },
-});
+import {
+  productDivider,
+  FormControl,
+  Select,
+  MenuItem,
+} from "@material-ui/core";
+import useStyles from "./styles";
 
 const CartProducts = ({ product }) => {
   const classes = useStyles();
@@ -67,7 +51,7 @@ const CartProducts = ({ product }) => {
         <Typography className={classes.name} variant="body1">
           {product.name}
         </Typography>
-        <FormControl className={classes.cartDetails}>
+        <FormControl className={classes.products}>
           <Select value={quantity} onChange={handleChange}>
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>
@@ -77,21 +61,21 @@ const CartProducts = ({ product }) => {
             <MenuItem value={6}>6</MenuItem>
           </Select>
         </FormControl>
-        <Typography className={classes.cartDetails} variant="body1">
+        <Typography className={classes.products} variant="body1">
           ${product.price}
         </Typography>
-        <Typography className={classes.cartDetails} variant="body1">
+        <Typography className={classes.products} variant="body1">
           ${calculateSubtotal(product)}
         </Typography>
         <Grid>
-          <IconButton className={classes.cartDetails}>
+          <IconButton className={classes.products}>
             <DeleteForeverIcon
               onClick={() => deleteProduct(product.id)}
             ></DeleteForeverIcon>
           </IconButton>
         </Grid>
       </Grid>
-      <Divider className={classes.divider} />
+      <productDivider className={classes.productDivider} />
     </Container>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CartContext } from "../contexts/CartContext";
-import LogInOutButton from "./home/LogInOutButton";
+import { CartContext } from "../../contexts/CartContext";
+import LogInOutButton from "../home/LogInOutButton";
 
 // Material-UI import
 import { AppBar, Toolbar, makeStyles } from "@material-ui/core";

@@ -3,35 +3,8 @@ import CartProducts from "./CartProducts";
 
 // Material-UI import
 import { Typography, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
-
-const useStyles = makeStyles({
-  cartDetails: {
-    fontWeight: "bold",
-    marginTop: 30,
-    marginLeft: 42,
-  },
-  divider: {
-    marginTop: 30,
-  },
-  heading: {
-    fontWeight: "bold",
-    marginTop: 30,
-    marginLeft: 160,
-    marginRight: 130,
-  },
-  cartWidth: {
-    maxWidth: "70%",
-  },
-  summary: {
-    width: 300,
-    height: 800,
-    paddingTop: 80,
-    marginLeft: 100,
-    backgroundColor: "rgb(238, 238, 238)",
-  },
-});
+import useStyles from "./styles";
 
 const CartDetails = ({ productList }) => {
   const classes = useStyles();
