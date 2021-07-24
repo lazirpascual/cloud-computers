@@ -1,24 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
+import Search from "./Search";
 
 // Material-UI import
-import { Typography, Button, ButtonGroup } from "@material-ui/core";
+import { Typography, Button, ButtonGroup, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  main: {
-    marginBottom: 150,
+  buttons: {
+    marginTop: 130,
   },
   category: {
     fontSize: "17px",
     justifyContent: "flex-start",
   },
+  main: {
+    paddingBottom: 20,
+  },
 });
 
 const Category = () => {
   const classes = useStyles();
-  const { setProducts, filterProduct } = useContext(ShopContext);
+  const { products, setProducts, filterProduct } = useContext(ShopContext);
   const [currentCategory, setCurrentCategory] = useState("All Products");
   const [viewAll, setViewAll] = useState(true);
 
@@ -50,13 +54,13 @@ const Category = () => {
 
   return (
     <div>
-      <Typography className={classes.main} variant="p">
-        Shop /
-      </Typography>
+      <Typography variant="p">Shop /</Typography>
       <Typography className={classes.main} variant="h4" gutterBottom>
         {currentCategory}
       </Typography>
+      <Search />
       <ButtonGroup
+        className={classes.buttons}
         orientation="vertical"
         color="inherit"
         aria-label="vertical outlined primary button group"
