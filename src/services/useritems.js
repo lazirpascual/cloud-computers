@@ -1,6 +1,6 @@
 import axios from "axios";
-// const baseUrl = "https://cloudcomputers.herokuapp.com/api/useritems";
-const baseUrl = "/api/useritems";
+const baseUrl = "https://cloudcomputers.herokuapp.com/api/useritems";
+// const baseUrl = "/api/useritems";
 
 let token = null;
 

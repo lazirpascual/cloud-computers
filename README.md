@@ -44,6 +44,9 @@ This is a fullstack MERN application that models an e-commerce website that lets
     First, I added some unit tests for the functionalities of the shopping cart page. These tests includes the following; the calculation for the subtotal of an item, the number of items in a cart and the total price in a cart.
   - **Integration Testing** <br />
     I then added some integation testing for the backend portion of my application. I decided to conduct API-level integration tests for the backend server by making HTTP requests and inspecting the test database I created with Mongoose. These tests included the testing of the REST API methods such as when initially retreiving, adding, and deleting an item from the shopping cart.
+- **Adding More Features** <br />
+  - **Login/Register** <br />
+    After integrating a backend, I created the ability for users to sign up and log in to their own accounts. This made it possible for users to keep track of their individual shopping carts, ensuring that only they themselves can change the contents of their own products. This was accomplished through the addition of users/login REST APIs and User/Token Authentication.
 
 ## Screenshots
 
