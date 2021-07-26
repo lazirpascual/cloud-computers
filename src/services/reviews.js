@@ -1,0 +1,27 @@
+import axios from "axios";
+// const baseUrl = "https://cloudcomputers.herokuapp.com/api/reviews";
+const baseUrl = "/api/reviews";
+
+let token = null;
+
+const setToken = (newToken) => {
+  token = `bearer ${newToken}`;
+};
+
+const getAll = async () => {
+  const response = await axios.get(baseUrl);
+  return response.data;
+};
+
+const create = async (newObject) => {
+  const config = {
+    headers: { Authorization: token },
+  };
+
+  const response = await axios.post(baseUrl, newObject, config);
+  return response.data;
+};
+
+const reviewService = { getAll, create, setToken };
+
+export default reviewService;

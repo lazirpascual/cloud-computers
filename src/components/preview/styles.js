@@ -22,5 +22,10 @@ export default makeStyles({
   },
   textReview: {
     marginLeft: 20,
+    fontWeight: "bold",
+  },
+  divider: {
+    marginTop: 20,
+    marginBottom: 20,
   },
 });

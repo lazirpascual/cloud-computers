@@ -5,12 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Typography, Container, Grid } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import {
-  productDivider,
-  FormControl,
-  Select,
-  MenuItem,
-} from "@material-ui/core";
+import { Divider, FormControl, Select, MenuItem } from "@material-ui/core";
 import useStyles from "./styles";
 
 const CartProducts = ({ product }) => {
@@ -73,7 +68,7 @@ const CartProducts = ({ product }) => {
           </IconButton>
         </Grid>
       </Grid>
-      <productDivider className={classes.productDivider} />
+      <Divider className={classes.productDivider} />
     </Container>
   );
 };
