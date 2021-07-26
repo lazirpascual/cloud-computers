@@ -14,10 +14,13 @@ export default makeStyles({
   addCart: {
     marginTop: 50,
   },
-  image: {
-    marginTop: 20,
-  },
   cartProductInfo: {
     marginTop: 40,
+  },
+  review: {
+    marginLeft: -15,
+  },
+  textReview: {
+    marginLeft: 20,
   },
 });

@@ -5,13 +5,16 @@ import AddToCart from "./AddToCart";
 import { Container, Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@material-ui/core";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import Link from "@material-ui/core/Link";
 import useStyles from "./styles";
+import Rating from "@material-ui/lab/Rating";
 
 const ProductPreview = () => {
   const classes = useStyles();
   const { preview } = useContext(ProductContext);
   const history = useHistory();
   const [completeOrder, setCompleteOrder] = useState(false);
+  const [value, setValue] = useState(0);
 
   return (
     <Container className="cart-bg">
@@ -28,21 +31,31 @@ const ProductPreview = () => {
           <Typography variant="h6" className={classes.productInfo}>
             Shop / {preview.category}
           </Typography>
-          <Typography
-            align="center"
-            variant="h3"
-            className={classes.productName}
-            gutterBottom
-          >
+          <Typography align="left" variant="h3" className={classes.productName}>
             {preview.name}
           </Typography>
-          <Grid container justify="center">
-            <img
-              className={classes.image}
-              src={preview.productPreview}
-              alt={preview.name}
-            />
-          </Grid>
+          <Box
+            className={classes.review}
+            display="flex"
+            justifyContent="left"
+            component="fieldset"
+            mb={3}
+            borderColor="transparent"
+          >
+            <Rating name="read-only" value={value} readOnly />
+            <Typography>(0)</Typography>
+            <Typography className={classes.textReview} variant="body1">
+              <Link href="#">Write a review</Link>
+            </Typography>
+          </Box>
+          <img
+            className={classes.image}
+            src={preview.productPreview}
+            alt={preview.name}
+          />
+          <Typography align="left" variant="h5" className={classes.productName}>
+            Customer Reviews
+          </Typography>
         </Grid>
         <Grid item xs={6} md="auto" lg="auto" className={classes.price}>
           <Typography variant="h6">

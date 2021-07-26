@@ -12,7 +12,7 @@ export default makeStyles({
   heading: {
     fontWeight: "bold",
     marginTop: 30,
-    marginLeft: 160,
+    marginLeft: 137,
     marginRight: 130,
   },
   cartWidth: {
