@@ -77,7 +77,6 @@ const CustomerReview = ({ reviews, setReviews }) => {
                 </Typography>
               </Grid>
             )}
-
             <Divider className={classes.divider} />
           </div>
         ))

@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import AddToCart from "./AddToCart";
 import CustomerReview from "./CustomerReview";
 import reviewService from "../../services/reviews";
+import Overview from "./Overview";
 import Footer from "../helper/Footer";
 import { Container, Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@material-ui/core";
@@ -122,6 +123,7 @@ const ProductPreview = () => {
             )}
           </Grid>
         </Grid>
+        <Overview preview={preview} />
         <CustomerReview reviews={reviews} setReviews={setReviews} />
       </Container>
       <Footer />

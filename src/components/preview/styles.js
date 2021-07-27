@@ -8,7 +8,7 @@ export default makeStyles({
     marginTop: 50,
   },
   price: {
-    marginLeft: 150,
+    marginLeft: 250,
     marginTop: 180,
   },
   addCart: {
@@ -46,5 +46,16 @@ export default makeStyles({
   icon: {
     paddingTop: 10,
     marginLeft: 5,
+  },
+  overview: {
+    maxWidth: 1150,
+  },
+  overviewDivider: {
+    maxWidth: 1150,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  image: {
+    marginTop: 50,
   },
 });

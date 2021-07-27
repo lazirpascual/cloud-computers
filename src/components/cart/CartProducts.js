@@ -1,7 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../contexts/CartContext";
-import { ProductContext } from "../../contexts/ProductContext";
-import { useHistory } from "react-router-dom";
 import { Typography, Container, Grid } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -12,8 +10,6 @@ const CartProducts = ({ product }) => {
   const classes = useStyles();
   const { updateCartState, deleteProduct, calculateSubtotal, updateQuantity } =
     useContext(CartContext);
-  const { savePreview } = useContext(ProductContext);
-  const history = useHistory();
   const [quantity, setQuantity] = useState(product.quantity);
 
   useEffect(() => {
@@ -21,11 +17,6 @@ const CartProducts = ({ product }) => {
     // update state so that we can see updated quantity right away
     updateCartState();
   }, [quantity]);
-
-  const handleClick = () => {
-    savePreview(product);
-    history.push("/preview");
-  };
 
   const handleChange = (e) => {
     e.preventDefault();
