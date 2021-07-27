@@ -57,7 +57,8 @@ const Products = () => {
               className={classes.text}
               variant="h6"
             >
-              (Please wait until the API fetches from Heroku on initial load)
+              (Please wait until the API is fetched from Heroku upon initial
+              load)
             </Typography>
           </div>
         )}

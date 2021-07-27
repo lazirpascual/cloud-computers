@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import reviewService from "../../services/reviews";
-import { Typography, Box, Divider } from "@material-ui/core";
+import { Typography, Box, Divider, Grid } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
 import useStyles from "./styles";
 import { IconButton } from "@material-ui/core";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 
 const CustomerReview = ({ reviews, setReviews }) => {
   const classes = useStyles();
@@ -52,11 +54,30 @@ const CustomerReview = ({ reviews, setReviews }) => {
             <Typography variant="body1" gutterBottom>
               {review.comment}
             </Typography>
-            <Typography variant="caption" gutterBottom>
-              {review.recommend === true
-                ? `Yes, I would recommend this to a friend`
-                : `No, I would NOT recommend this to a friend`}
-            </Typography>
+            {review.recommend === true ? (
+              <Grid container alignItems="center">
+                <InsertEmoticonIcon />
+                <Typography
+                  className={classes.icon}
+                  variant="caption"
+                  gutterBottom
+                >
+                  <b>Yes,</b> I would recommend this to a friend
+                </Typography>
+              </Grid>
+            ) : (
+              <Grid container alignItems="center">
+                <SentimentVeryDissatisfiedIcon />
+                <Typography
+                  className={classes.icon}
+                  variant="caption"
+                  gutterBottom
+                >
+                  <b>No,</b> I would not recommend this to a friend
+                </Typography>
+              </Grid>
+            )}
+
             <Divider className={classes.divider} />
           </div>
         ))
