@@ -49,6 +49,7 @@ export default makeStyles({
   },
   overview: {
     maxWidth: 1150,
+    fontSize: 18,
   },
   overviewDivider: {
     maxWidth: 1150,

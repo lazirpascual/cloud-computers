@@ -1,6 +1,6 @@
 # Shopping-Website
 
-This is a fullstack MERN application that models an e-commerce website that lets you buy computer parts. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
+This is a fullstack MERN application that models an e-commerce website that lets users buy computer parts. Includes Unit, Integration, and End-To-End Testing. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
 
 [Live Demo of Application](https://cloudcomputers.netlify.app/)
 
@@ -31,7 +31,9 @@ This is a fullstack MERN application that models an e-commerce website that lets
 - Responsive design which includes a clean user interface with smooth animations
 - User registration/login
 - Add, remove, and update products from the shopping cart
+- Create ratings and reviews for each product
 - Search products by name and filter products by categories in the shop
+- Finalize your purchase by checking out your items
 
 ## Development Process
 
@@ -48,6 +50,8 @@ This is a fullstack MERN application that models an e-commerce website that lets
 - **Adding More Features** <br />
   - **Login/Register** <br />
     After integrating a backend, I created the ability for users to sign up and log in to their own accounts. This made it possible for users to keep track of their individual shopping carts, ensuring that only they themselves can change the contents of their own products. This was accomplished through the addition of users/login REST APIs and User/Token Authentication.
+  - **Review/Rating System** <br />
+    By creating user accounts, I was able to implement more features that were user related. This is where I created the review/rating system where user authenticated accounts are able to leave ratings (ranging from 1 to 5 stars) and also write their own reviews for a specific product. Ratings/reviews can only be deleted by the user who created them.
 
 ## Screenshots
 
@@ -55,18 +59,34 @@ This is a fullstack MERN application that models an e-commerce website that lets
 
 ![preview](https://i.imgur.com/Zhy1Xpi.jpg)
 
+- Upon initially loading the application, it redirects you to the homepage. In this page, a user can click buttons that take them to the shopping page, register page, or the login page.
+
 ### Catalog Page
 
 ![preview](https://i.imgur.com/07f9pMg.jpg)
 
+- The catalog page displays a preview of all the items in the shop. In this page, a user can search for a specific product by name or filter all products out by their specific category.
+
 ### Product Page
 
-![preview](https://i.imgur.com/ZBkOfbS.jpg)
+![preview](https://i.imgur.com/5SmrvhH.jpg)
+
+- When a user clicks on a product, they are redirected to the product page. This page displays an overview of each item such as the product name, price, a description of what the product is, the rating of that product as well as the reviews left by the customers. Users can also add the current displayed item to the cart as well as create a rating/review for the current item.
+
+### Review Page
+
+![preview](https://i.imgur.com/rxgUKfl.jpg)
+
+- When a user clicks on the "write a review" button on the product page, they are then prompted a review form from this page. Users can choose a rating from 1-5 and write their reviews which contains a title, a description, as well as an option to choose whether they would recommend this product to a friend or not.
 
 ### Cart Page
 
 ![preview](https://i.imgur.com/4CUGLN2.jpg)
 
+- All the items added by the user is displayed on this page. Here, a user can update the content of their current products by changing the product quantity or by deleting the product itself. The page also displays a quick summary of how many items there are in the cart as well as the total calculated price. Finally, a user can click the checkout button to finalize their purchase.
+
 ### Checkout Page
 
 ![preview](https://i.imgur.com/Xn0gved.jpg)
+
+- After a user clicks the checkout button, they are prompted to fill in their personal information which includes shipping address and credit card info (does not actually need to be filled in, only used for demonstration). A final summary of their purchase is displayed here, and by clicking the place order button, an order confirmation message is sent to the user.

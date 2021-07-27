@@ -29,7 +29,7 @@ const CustomerReview = ({ reviews, setReviews }) => {
       <Divider className={classes.divider} />
       {reviews.length > 0 ? (
         reviews.map((review) => (
-          <div className={classes.reviewWidth}>
+          <div className={classes.reviewWidth} key={review.id}>
             <Box
               className={classes.review}
               display="flex"

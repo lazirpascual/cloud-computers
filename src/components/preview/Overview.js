@@ -10,7 +10,7 @@ const Overview = ({ preview }) => {
         Overview
       </Typography>
       <Divider className={classes.overviewDivider} />
-      <Typography className={classes.overview} variant="body1">
+      <Typography className={classes.overview} variant="h5">
         {preview.overview}
       </Typography>
     </div>

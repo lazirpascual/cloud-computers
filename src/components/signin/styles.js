@@ -21,4 +21,10 @@ export default makeStyles((theme) => ({
   cursor: {
     cursor: "pointer",
   },
+  google: {
+    marginBottom: 30,
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
