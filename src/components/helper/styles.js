@@ -25,4 +25,24 @@ export default makeStyles((theme) => ({
   navbar: {
     marginBottom: 200,
   },
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "25vh",
+  },
+  main: {
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(2),
+  },
+  footer: {
+    padding: theme.spacing(3, 2),
+    marginTop: "auto",
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.grey[200]
+        : theme.palette.grey[800],
+  },
+  copyright: {
+    marginBottom: 10,
+  },
 }));

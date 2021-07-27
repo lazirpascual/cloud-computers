@@ -56,4 +56,7 @@ export default makeStyles({
     marginLeft: 36,
     marginTop: 100,
   },
+  footer: {
+    marginBottom: 60,
+  },
 });

@@ -26,6 +26,7 @@ export default makeStyles({
     fontWeight: "bold",
   },
   divider: {
+    maxWidth: 580,
     marginTop: 20,
     marginBottom: 15,
   },
@@ -38,5 +39,8 @@ export default makeStyles({
   },
   reviewLength: {
     marginLeft: 10,
+  },
+  reviewWidth: {
+    maxWidth: "47%",
   },
 });

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 import Notification from "../helper/Notification";
+import Copyright from "../helper/Copyright";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -15,22 +16,6 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import useStyles from "./styles";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link
-        color="inherit"
-        href="https://github.com/lazirpascual/shopping-website"
-      >
-        Cloud Computers
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 export default function SignIn() {
   const classes = useStyles();

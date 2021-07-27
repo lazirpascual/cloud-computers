@@ -3,6 +3,7 @@ import Products from "./Products";
 import Category from "./Category";
 import { ShopContext } from "../../contexts/ShopContext";
 import productService from "../../services/products";
+import Footer from "../helper/Footer";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -36,6 +37,7 @@ const ShopSection = () => {
           <Products />
         </Grid>
       </Grid>
+      <Footer />
     </div>
   );
 };

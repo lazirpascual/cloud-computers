@@ -27,7 +27,7 @@ const CustomerReview = ({ reviews, setReviews }) => {
       <Divider className={classes.divider} />
       {reviews.length > 0 ? (
         reviews.map((review) => (
-          <div>
+          <div className={classes.reviewWidth}>
             <Box
               className={classes.review}
               display="flex"
@@ -48,7 +48,6 @@ const CustomerReview = ({ reviews, setReviews }) => {
             </Box>
             <Typography variant="subtitle2" gutterBottom>
               Reviewed by {review.user.name} - {review.date}
-              {console.log(review)}
             </Typography>
             <Typography variant="body1" gutterBottom>
               {review.comment}
@@ -58,7 +57,6 @@ const CustomerReview = ({ reviews, setReviews }) => {
                 ? `Yes, I would recommend this to a friend`
                 : `No, I would NOT recommend this to a friend`}
             </Typography>
-
             <Divider className={classes.divider} />
           </div>
         ))
