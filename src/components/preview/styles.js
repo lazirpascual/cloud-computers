@@ -28,4 +28,7 @@ export default makeStyles({
     marginTop: 20,
     marginBottom: 20,
   },
+  cursor: {
+    cursor: "pointer",
+  },
 });

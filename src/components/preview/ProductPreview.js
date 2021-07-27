@@ -67,13 +67,19 @@ const ProductPreview = () => {
             borderColor="transparent"
           >
             <Rating
-              name="read-only"
+              name="half-rating-read"
               value={calculateAverageReview()}
+              precision={0.5}
               readOnly
             />
             <Typography>({reviews.length})</Typography>
             <Typography className={classes.textReview} variant="body1">
-              <Link href="#">Write a review</Link>
+              <Link
+                className={classes.cursor}
+                onClick={() => history.push(`/review`)}
+              >
+                Write A Review
+              </Link>
             </Typography>
           </Box>
           <img

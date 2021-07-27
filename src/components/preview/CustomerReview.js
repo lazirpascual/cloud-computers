@@ -11,34 +11,40 @@ const CustomerReview = ({ reviews }) => {
         Customer Reviews
       </Typography>
       <Divider className={classes.divider} />
-      {reviews.map((review) => (
-        <div>
-          <Box
-            className={classes.review}
-            display="flex"
-            justifyContent="left"
-            component="fieldset"
-            borderColor="transparent"
-          >
-            <Rating name="read-only" value={review.rating} readOnly />
-            <Typography className={classes.textReview} variant="body1">
-              {review.title}
+      {reviews.length ? (
+        reviews.map((review) => (
+          <div>
+            <Box
+              className={classes.review}
+              display="flex"
+              justifyContent="left"
+              component="fieldset"
+              borderColor="transparent"
+            >
+              <Rating name="read-only" value={review.rating} readOnly />
+              <Typography className={classes.textReview} variant="body1">
+                {review.title}
+              </Typography>
+            </Box>
+            <Typography variant="subtitle2" gutterBottom>
+              Reviewed by {review.user.name}
             </Typography>
-          </Box>
-          <Typography variant="subtitle2" gutterBottom>
-            Reviewed by {review.user.name}
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            {review.comment}
-          </Typography>
-          <Typography variant="caption" gutterBottom>
-            {review.recommend
-              ? `Yes, I would recommend this to a friend`
-              : `No, I would NOT recommend this to a friend`}
-          </Typography>
-          <Divider className={classes.divider} />
-        </div>
-      ))}
+            <Typography variant="body1" gutterBottom>
+              {review.comment}
+            </Typography>
+            <Typography variant="caption" gutterBottom>
+              {review.recommend
+                ? `Yes, I would recommend this to a friend`
+                : `No, I would NOT recommend this to a friend`}
+            </Typography>
+            <Divider className={classes.divider} />
+          </div>
+        ))
+      ) : (
+        <Typography align="left" className={classes.divider} variant="body1">
+          No reviews for this product
+        </Typography>
+      )}
     </div>
   );
 };
