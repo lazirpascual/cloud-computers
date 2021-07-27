@@ -22,13 +22,18 @@ export default makeStyles({
   },
   textReview: {
     marginLeft: 20,
+    marginRight: "auto",
     fontWeight: "bold",
   },
   divider: {
     marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 15,
   },
   cursor: {
     cursor: "pointer",
+  },
+  customerReview: {
+    fontWeight: "bold",
+    marginTop: 50,
   },
 });

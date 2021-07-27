@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 import userCartService from "../services/useritems";
+import reviewService from "../services/reviews";
 import loginService from "../services/login";
 
 export const UserContext = createContext();
@@ -15,6 +16,7 @@ const UserContextProvider = (props) => {
       const user = JSON.parse(loggedUserJSON);
       setUser(user);
       userCartService.setToken(user.token);
+      reviewService.setToken(user.token);
     }
   }, []);
 
@@ -26,6 +28,7 @@ const UserContextProvider = (props) => {
 
     window.localStorage.setItem("loggedUser", JSON.stringify(user));
     userCartService.setToken(user.token);
+    reviewService.setToken(user.token);
     setUser(user);
 
     // log user out after 1 hour

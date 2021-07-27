@@ -59,9 +59,9 @@ export default function SignUp() {
       setPassword("");
       setName("");
       setLastName("");
-
       // after signing up, log user in
       const loginSuccess = await loginToApp(username, password);
+
       if (signupSuccess && loginSuccess) {
         history.push(`/`);
       }
