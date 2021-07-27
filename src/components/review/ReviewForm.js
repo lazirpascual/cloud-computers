@@ -26,8 +26,7 @@ const ReviewForm = () => {
   const [open, setOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleClick = (productPreview) => {
-    savePreview(productPreview);
+  const handleClick = () => {
     history.push("/preview");
   };
 

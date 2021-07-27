@@ -39,7 +39,6 @@ export default makeStyles({
     marginTop: 10,
   },
   image: {
-    cursor: "pointer",
     width: 80,
     height: 70,
   },

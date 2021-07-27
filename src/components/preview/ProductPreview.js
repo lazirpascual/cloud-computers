@@ -16,13 +16,11 @@ const ProductPreview = () => {
   const { preview } = useContext(ProductContext);
   const history = useHistory();
   const [completeOrder, setCompleteOrder] = useState(false);
-  const [value, setValue] = useState(0);
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const getProductReviews = async () => {
       const initialReviews = await reviewService.getAll();
-      console.log(initialReviews);
       const productReviews = initialReviews.filter(
         (review) => preview.id === review.productId
       );
@@ -72,7 +70,9 @@ const ProductPreview = () => {
               precision={0.5}
               readOnly
             />
-            <Typography>({reviews.length})</Typography>
+            <Typography className={classes.reviewLength}>
+              ({reviews.length})
+            </Typography>
             <Typography className={classes.textReview} variant="body1">
               <Link
                 className={classes.cursor}

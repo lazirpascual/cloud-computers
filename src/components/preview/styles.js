@@ -36,4 +36,7 @@ export default makeStyles({
     fontWeight: "bold",
     marginTop: 50,
   },
+  reviewLength: {
+    marginLeft: 10,
+  },
 });
