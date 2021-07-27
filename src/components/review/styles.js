@@ -27,4 +27,7 @@ export default makeStyles({
     marginTop: 130,
     marginLeft: -75,
   },
+  error: {
+    marginTop: 50,
+  },
 });
