@@ -8,7 +8,7 @@ export default makeStyles({
     marginTop: 50,
   },
   price: {
-    marginLeft: 250,
+    marginLeft: 150,
     marginTop: 180,
   },
   addCart: {

@@ -43,7 +43,7 @@ const ProductPreview = () => {
     <div>
       <Container className="cart-bg">
         <Grid container direction="row" alignItems="flex-start" spacing={10}>
-          <Grid item xs="auto" md="auto" lg="auto">
+          <Grid item xs={6} md={6} lg={6}>
             <Button
               onClick={() => history.push(`/shop`)}
               size="large"
@@ -94,7 +94,7 @@ const ProductPreview = () => {
               alt={preview.name}
             />
           </Grid>
-          <Grid item xs="auto" md="auto" lg="auto" className={classes.price}>
+          <Grid item xs={6} md="auto" lg="auto" className={classes.price}>
             <Typography variant="h6">
               <Box letterSpacing={6}>CLOUD COMPUTERS</Box>
             </Typography>
