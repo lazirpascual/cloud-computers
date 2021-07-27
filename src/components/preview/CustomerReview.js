@@ -1,14 +1,23 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import reviewService from "../../services/reviews";
 import { Typography, Box, Divider } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
 import useStyles from "./styles";
 import { IconButton } from "@material-ui/core";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-const CustomerReview = ({ reviews }) => {
+const CustomerReview = ({ reviews, setReviews }) => {
   const classes = useStyles();
   const { user } = useContext(UserContext);
+
+  const handleDelete = (key) => {
+    if (window.confirm("Remove This Review?")) {
+      reviewService.remove(key).then(() => {
+        setReviews(reviews.filter((review) => review.id !== key));
+      });
+    }
+  };
 
   return (
     <div>
@@ -32,7 +41,7 @@ const CustomerReview = ({ reviews }) => {
                 {review.title}
               </Typography>
               {user.name === review.user.name && (
-                <IconButton>
+                <IconButton onClick={() => handleDelete(review.id)}>
                   <DeleteForeverIcon></DeleteForeverIcon>
                 </IconButton>
               )}
@@ -45,7 +54,7 @@ const CustomerReview = ({ reviews }) => {
               {review.comment}
             </Typography>
             <Typography variant="caption" gutterBottom>
-              {review.recommend
+              {review.recommend === true
                 ? `Yes, I would recommend this to a friend`
                 : `No, I would NOT recommend this to a friend`}
             </Typography>

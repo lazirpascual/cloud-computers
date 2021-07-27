@@ -35,7 +35,7 @@ const ReviewForm = () => {
     event.preventDefault();
 
     try {
-      const newRecommend = recommend ? true : false;
+      const newRecommend = recommend === "true" ? true : false;
 
       const reviewSuccess = await reviewService.create({
         rating,

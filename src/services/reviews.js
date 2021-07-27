@@ -22,6 +22,15 @@ const create = async (newObject) => {
   return response.data;
 };
 
-const reviewService = { getAll, create, setToken };
+const remove = async (id) => {
+  const config = {
+    headers: { Authorization: token },
+  };
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config);
+  return response.data;
+};
+
+const reviewService = { getAll, create, remove, setToken };
 
 export default reviewService;

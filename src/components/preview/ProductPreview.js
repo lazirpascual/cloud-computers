@@ -87,7 +87,7 @@ const ProductPreview = () => {
             src={preview.productPreview}
             alt={preview.name}
           />
-          <CustomerReview reviews={reviews} />
+          <CustomerReview reviews={reviews} setReviews={setReviews} />
         </Grid>
         <Grid item xs={6} md="auto" lg="auto" className={classes.price}>
           <Typography variant="h6">
