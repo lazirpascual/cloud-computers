@@ -20,7 +20,7 @@ export default function Footer() {
           >
             Disclaimer: The depiction of products or images is for demonstration
             purposes only and remain the property of their respective owners.
-            Not for actual Sale.
+            Not for actual sale.
           </Typography>
           <Copyright />
         </Container>

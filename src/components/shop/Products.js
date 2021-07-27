@@ -42,14 +42,24 @@ const Products = () => {
             </Grid>
           ))
         ) : (
-          <Typography
-            align="center"
-            color="textSecondary"
-            className={classes.text}
-            variant="h4"
-          >
-            No products found with that name.
-          </Typography>
+          <div>
+            <Typography
+              align="center"
+              color="textSecondary"
+              className={classes.text}
+              variant="h4"
+            >
+              No products found with that name.
+            </Typography>
+            <Typography
+              align="center"
+              color="textSecondary"
+              className={classes.text}
+              variant="h6"
+            >
+              (Please wait until the API fetches from Heroku on initial load)
+            </Typography>
+          </div>
         )}
       </Grid>
     </Container>

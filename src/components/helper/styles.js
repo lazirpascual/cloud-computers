@@ -30,10 +30,6 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     minHeight: "25vh",
   },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
-  },
   footer: {
     padding: theme.spacing(3, 2),
     marginTop: "auto",
