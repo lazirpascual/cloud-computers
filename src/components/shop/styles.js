@@ -30,16 +30,19 @@ export default makeStyles({
     paddingLeft: 100,
   },
   media: {
-    height: 250,
+    height: 320,
     paddingTop: 25,
     paddingBottom: 25,
   },
   mediaHovered: {
-    height: 250,
+    height: 320,
     paddingTop: 25,
     paddingBottom: 25,
     transform: "scale3d(1.3, 1.3, 1)",
     transition:
       "all .1s cubic-bezier(.61,1,.88,1),transform .15s cubic-bezier(.61,1,.88,1)",
+  },
+  productName: {
+    fontSize: 18,
   },
 });

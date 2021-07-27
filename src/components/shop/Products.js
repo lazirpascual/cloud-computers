@@ -31,10 +31,16 @@ const Products = () => {
               >
                 <MediaPreview product={product} />
                 <CardContent>
-                  <Typography gutterBottom variant="h6" component="h2">
-                    {product.name}
+                  <Typography
+                    className={classes.productName}
+                    align="center"
+                    gutterBottom
+                    variant="body1"
+                    component="h2"
+                  >
+                    <b>{product.name}</b>
                   </Typography>
-                  <Typography variant="body1" component="p">
+                  <Typography align="center" variant="body1" component="p">
                     ${product.price}
                   </Typography>
                 </CardContent>
