@@ -25,7 +25,7 @@ const CustomerReview = ({ reviews, setReviews }) => {
         Customer Reviews
       </Typography>
       <Divider className={classes.divider} />
-      {reviews.length ? (
+      {reviews.length > 0 ? (
         reviews.map((review) => (
           <div>
             <Box
@@ -40,7 +40,7 @@ const CustomerReview = ({ reviews, setReviews }) => {
               <Typography className={classes.textReview} variant="body1">
                 {review.title}
               </Typography>
-              {user.name === review.user.name && (
+              {user && user.name === review.user.name && (
                 <IconButton onClick={() => handleDelete(review.id)}>
                   <DeleteForeverIcon></DeleteForeverIcon>
                 </IconButton>
