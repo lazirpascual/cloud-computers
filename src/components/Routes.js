@@ -8,7 +8,7 @@ import ProductPreview from "./preview/ProductPreview";
 import SignUp from "./signup/SignUp";
 import SignIn from "./signin/SignIn";
 import Checkout from "./checkout/Checkout";
-import ReviewForm from "./review/ReviewForm";
+import Review from "./review/Review";
 
 const Routes = () => {
   return (
@@ -22,7 +22,7 @@ const Routes = () => {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/checkout" component={Checkout} />
-        <Route exact path="/review" component={ReviewForm} />
+        <Route exact path="/review" component={Review} />
       </Switch>
     </BrowserRouter>
   );
