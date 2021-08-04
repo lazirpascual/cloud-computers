@@ -97,7 +97,7 @@ const SignUpForm = ({ createUser }) => {
       >
         Sign Up
       </Button>
-      <Grid container justifyContent="flex-end">
+      <Grid container>
         <Grid item>
           <Link
             className={classes.cursor}
