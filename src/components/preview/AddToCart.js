@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
+
 import { Snackbar, Button } from "@material-ui/core";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import MuiAlert from "@material-ui/lab/Alert";
@@ -32,6 +33,7 @@ const AddToCart = ({ preview, setCompleteOrder }) => {
   return (
     <div>
       <Button
+        id="cart"
         onClick={handleClick}
         startIcon={<AddShoppingCartIcon />}
         size="large"

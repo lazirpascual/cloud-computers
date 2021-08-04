@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
-import { useHistory } from "react-router-dom";
-import reviewService from "../../services/reviews";
 
 import { TextField, Typography, Button, Radio } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
@@ -10,10 +8,9 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import useStyles from "./styles";
 
-const ReviewForm = ({ handleException }) => {
+const ReviewForm = ({ createReview }) => {
   const classes = useStyles();
   const { preview } = useContext(ProductContext);
-  const history = useHistory();
   const [rating, setRating] = useState(5);
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
@@ -21,34 +18,26 @@ const ReviewForm = ({ handleException }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const newRecommend = recommend === "true" ? true : false;
 
-    try {
-      const newRecommend = recommend === "true" ? true : false;
-
-      const reviewSuccess = await reviewService.create({
-        rating,
-        title,
-        comment,
-        recommend: newRecommend,
-        productId: preview.id,
-        date: new Date().toISOString().slice(0, 10),
-      });
-      setRating(5);
-      setTitle("");
-      setComment("");
-      setRecommend("true");
-
-      if (reviewSuccess) {
-        history.push("/preview");
-      }
-    } catch (exception) {
-      handleException(exception);
-    }
+    createReview({
+      rating,
+      title,
+      comment,
+      recommend: newRecommend,
+      productId: preview.id,
+      date: new Date().toISOString().slice(0, 10),
+    });
+    setRating(5);
+    setTitle("");
+    setComment("");
+    setRecommend("true");
   };
 
   return (
     <form onSubmit={handleSubmit} noValidate>
       <Rating
+        id="rating"
         onChange={(e) => setRating(e.target.value)}
         name="half-rating"
         value={rating}
@@ -62,6 +51,7 @@ const ReviewForm = ({ handleException }) => {
         Let us know how this product is working for you.
       </Typography>
       <TextField
+        id="title"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
         variant="outlined"
@@ -75,6 +65,7 @@ const ReviewForm = ({ handleException }) => {
         Write a short, descriptive title for your review.
       </Typography>
       <TextField
+        id="comment"
         onChange={(e) => setComment(e.target.value)}
         value={comment}
         variant="outlined"
@@ -91,6 +82,7 @@ const ReviewForm = ({ handleException }) => {
       </Typography>
       <FormControl component="fieldset">
         <RadioGroup
+          id="recommend"
           value={recommend}
           onChange={(e) => setRecommend(e.target.value)}
         >

@@ -6,6 +6,7 @@ import Notification from "../helper/Notification";
 import Footer from "../helper/Footer";
 import ReviewForm from "./ReviewForm";
 import InvalidReview from "./InvalidReview";
+import reviewService from "../../services/reviews";
 
 import { Container, Typography, Divider, Grid } from "@material-ui/core";
 import useStyles from "./styles";
@@ -23,11 +24,19 @@ const Review = () => {
     history.push("/preview");
   };
 
-  const handleException = (exception) => {
-    const errorMessage = `Unable to submit review: Please make sure all fields are filled in.`;
-    setOpen(true);
-    setErrorMessage(errorMessage);
-    console.log(exception);
+  const createReview = async (reviewObject) => {
+    try {
+      const reviewSuccess = await reviewService.create(reviewObject);
+
+      if (reviewSuccess) {
+        history.push("/preview");
+      }
+    } catch (exception) {
+      const errorMessage = `Unable to submit review: Please make sure all fields are filled in.`;
+      setOpen(true);
+      setErrorMessage(errorMessage);
+      console.log(exception);
+    }
   };
 
   return user ? (
@@ -57,7 +66,7 @@ const Review = () => {
         <Typography className={classes.heading} variant="h6">
           Overall Rating
         </Typography>
-        <ReviewForm handleException={handleException} />
+        <ReviewForm createReview={createReview} />
       </Container>
       <Footer />
     </div>

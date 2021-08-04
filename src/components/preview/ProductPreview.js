@@ -6,12 +6,12 @@ import CustomerReview from "./CustomerReview";
 import reviewService from "../../services/reviews";
 import Overview from "./Overview";
 import Footer from "../helper/Footer";
+
 import { Container, Grid, Typography, Button } from "@material-ui/core";
-import { Box } from "@material-ui/core";
+import { Box, Link } from "@material-ui/core";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
-import Link from "@material-ui/core/Link";
-import useStyles from "./styles";
 import Rating from "@material-ui/lab/Rating";
+import useStyles from "./styles";
 
 const ProductPreview = () => {
   const classes = useStyles();

@@ -29,7 +29,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 ## Features
 
 - Responsive design which includes a clean user interface with smooth animations
-- User registration/login
+- User registration/login with local storage based JWT authentication
 - Add, remove, and update products from the shopping cart
 - Create ratings and reviews for each product
 - Search products by name and filter products by categories in the shop

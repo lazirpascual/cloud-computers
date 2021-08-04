@@ -32,13 +32,16 @@ export default makeStyles({
   },
   cursor: {
     cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+    },
   },
   customerReview: {
     fontWeight: "bold",
     marginTop: 50,
   },
   reviewLength: {
-    marginLeft: 10,
+    marginLeft: 5,
   },
   reviewWidth: {
     maxWidth: 700,
