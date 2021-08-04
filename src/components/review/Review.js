@@ -20,10 +20,6 @@ const Review = () => {
   const [open, setOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleClick = () => {
-    history.push("/preview");
-  };
-
   const createReview = async (reviewObject) => {
     try {
       const reviewSuccess = await reviewService.create(reviewObject);
@@ -49,7 +45,7 @@ const Review = () => {
         <Grid
           container
           className={classes.product}
-          onClick={() => handleClick(preview)}
+          onClick={() => history.push("/preview")}
           alignItems="center"
           justifyContent="space-evenly"
         >

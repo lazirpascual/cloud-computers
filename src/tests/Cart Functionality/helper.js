@@ -22,8 +22,6 @@ const totalQuantity = (products) => {
   return products.length === 0 ? 0 : count;
 };
 
-module.exports = {
-  subtotal,
-  orderTotal,
-  totalQuantity,
-};
+const testHelper = { subtotal, orderTotal, totalQuantity };
+
+export default testHelper;
