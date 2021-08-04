@@ -26,13 +26,7 @@ const CartContextProvider = (props) => {
     user ? getUserCart() : getDemoCart();
   }, [user]);
 
-  const updateCartState = () => {
-    // function that updates the productList state
-    const filteredList = productList.filter((product) => product);
-    setProductList(filteredList);
-  };
-
-  const addProduct = (newProduct) => {
+  const addProduct = async (newProduct) => {
     const service = user ? userItemsService : cartService;
 
     const newList = productList;
@@ -45,48 +39,48 @@ const CartContextProvider = (props) => {
       newList[existingIndex].quantity++;
       setProductList(newList);
     } else {
-      service
-        .create(newProduct)
-        .then((returnedProduct) => {
-          setProductList([...productList, returnedProduct]);
-        })
-        .catch((error) => {
-          console.log(error.response.data);
-        });
+      try {
+        const returnedProduct = await service.create(newProduct);
+        setProductList([...productList, returnedProduct]);
+      } catch (error) {
+        console.log(error.response.data);
+      }
     }
   };
 
-  const deleteProduct = (key) => {
+  const deleteProduct = async (key) => {
     const service = user ? userItemsService : cartService;
 
     if (window.confirm("Remove This Product?")) {
-      service
-        .remove(key)
-        .then(() => {
-          setProductList(productList.filter((product) => product.id !== key));
-        })
-        .catch((error) => {
-          console.log(error.response.data);
-        });
+      try {
+        await service.remove(key);
+        setProductList(productList.filter((product) => product.id !== key));
+      } catch (error) {
+        console.log(error.response.data);
+      }
     }
   };
 
-  const updateQuantity = (newQuantity, product) => {
+  const updateQuantity = async (newQuantity, product) => {
     const service = user ? userItemsService : cartService;
     const updatedProduct = { ...product, quantity: newQuantity };
 
-    service
-      .update(product.id, updatedProduct)
-      .then((returnedProduct) => {
-        setProductList(
-          productList.map((newProduct) =>
-            newProduct.id !== product.id ? newProduct : returnedProduct
-          )
-        );
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
+    try {
+      const returnedProduct = await service.update(product.id, updatedProduct);
+      setProductList(
+        productList.map((newProduct) =>
+          newProduct.id !== product.id ? newProduct : returnedProduct
+        )
+      );
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
+  const updateCartState = () => {
+    // function that updates the productList state
+    const filteredList = productList.filter((product) => product);
+    setProductList(filteredList);
   };
 
   const calculateSubtotal = (product) => {

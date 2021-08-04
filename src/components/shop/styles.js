@@ -31,11 +31,13 @@ export default makeStyles({
   },
   media: {
     height: 320,
+    paddingTop: 15,
     paddingBottom: 30,
     marginBottom: 5,
   },
   mediaHovered: {
     height: 320,
+    paddingTop: 15,
     paddingBottom: 30,
     marginBottom: 5,
     transform: "scale3d(1.3, 1.3, 1)",
