@@ -29,7 +29,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 ## Features
 
 - Responsive design which includes a clean user interface with smooth animations
-- User registration/login with local storage based JWT authentication
+- User registration/login authenticated through JSON Web Token
 - Add, remove, and update products from the shopping cart
 - Create ratings and reviews for each product
 - Search products by name and filter products by categories in the shop
@@ -44,9 +44,9 @@ This is a fullstack MERN application that models an e-commerce website that lets
 - **Adding Tests** <br />
   To complete the fullstack aspect of my application, I thought that it would be a good idea to implement testing. Therefore, I added three levels of testing in my application; Unit Testing, Integration Testing, and End-To-End Testing.
   - **Unit Testing** <br />
-    First, I added some unit tests for the functionalities of the shopping cart page. These tests includes the following; the calculation for the subtotal of an item, the number of items in a cart and the total price in a cart.
+    First, I added some unit tests for the functionalities of the shopping cart page. These tests includes the following; the calculation for the subtotal of an item, the number of items in a cart and the total price in a cart. Then, I added unit tests for the react components. These tests checks whether the products in the cart/shop and reviews in the product page have all been rendered properly. Unit tests were also added that checks whether the Review/Signup forms were saving and updating the input fields with the correct content as well as a test that checks whether that AddToCart button was working as intended.
   - **Integration Testing** <br />
-    I then added some integation testing for the backend portion of my application. I decided to conduct API-level integration tests for the backend server by making HTTP requests and inspecting the test database I created with Mongoose. These tests included the testing of the REST API methods such as when initially retreiving, adding, and deleting an item from the shopping cart.
+    Then, I added some integation testing for the backend portion of my application. I decided to conduct API-level integration tests for the backend server by making HTTP requests and inspecting the test database I created with Mongoose. These tests included the testing of the REST API methods such as when initially retreiving, adding, and deleting an item from the shopping cart.
 - **Adding More Features** <br />
   - **Login/Register** <br />
     After integrating a backend, I created the ability for users to sign up and log in to their own accounts. This made it possible for users to keep track of their individual shopping carts, ensuring that only they themselves can change the contents of their own products. This was accomplished through the addition of users/login REST APIs and User/Token Authentication.
