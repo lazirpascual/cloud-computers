@@ -33,7 +33,7 @@ const Review = ({ review, handleDelete }) => {
         )}
       </Box>
       <Typography variant="subtitle2" gutterBottom>
-        Reviewed by {review.user.name} - {review.date}
+        Reviewed by {review.user.name} — {review.date}
       </Typography>
       <Typography variant="body1" gutterBottom>
         {review.comment}
