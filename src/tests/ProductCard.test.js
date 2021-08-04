@@ -4,6 +4,7 @@ import { render } from "@testing-library/react";
 import ProductCard from "../components/shop/ProductCard";
 import ProductContextProvider from "../contexts/ProductContext";
 
+// this is testing if the list of products in the shop is being generated properly
 test("<ProductCard /> renders the correct content", () => {
   const product = {
     name: "AMD Ryzen 5 5600X",

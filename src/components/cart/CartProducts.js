@@ -25,7 +25,7 @@ const CartProducts = ({ product }) => {
 
   return (
     <Container>
-      <Grid container alignItems="center" justifyContent="space-evenly">
+      <Grid container alignItems="center">
         <img
           className={classes.image}
           src={product.productPreview}
@@ -51,10 +51,11 @@ const CartProducts = ({ product }) => {
           ${calculateSubtotal(product)}
         </Typography>
         <Grid>
-          <IconButton className={classes.products}>
-            <DeleteForeverIcon
-              onClick={() => deleteProduct(product.id)}
-            ></DeleteForeverIcon>
+          <IconButton
+            className={classes.products}
+            onClick={() => deleteProduct(product.id)}
+          >
+            <DeleteForeverIcon></DeleteForeverIcon>
           </IconButton>
         </Grid>
       </Grid>
