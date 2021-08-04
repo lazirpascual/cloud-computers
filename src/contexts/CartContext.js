@@ -45,9 +45,14 @@ const CartContextProvider = (props) => {
       newList[existingIndex].quantity++;
       setProductList(newList);
     } else {
-      service.create(newProduct).then((returnedProduct) => {
-        setProductList([...productList, returnedProduct]);
-      });
+      service
+        .create(newProduct)
+        .then((returnedProduct) => {
+          setProductList([...productList, returnedProduct]);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
     }
   };
 
@@ -55,9 +60,14 @@ const CartContextProvider = (props) => {
     const service = user ? userItemsService : cartService;
 
     if (window.confirm("Remove This Product?")) {
-      service.remove(key).then(() => {
-        setProductList(productList.filter((product) => product.id !== key));
-      });
+      service
+        .remove(key)
+        .then(() => {
+          setProductList(productList.filter((product) => product.id !== key));
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
     }
   };
 

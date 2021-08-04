@@ -54,29 +54,28 @@ const CustomerReview = ({ reviews, setReviews }) => {
             <Typography variant="body1" gutterBottom>
               {review.comment}
             </Typography>
-            {review.recommend === true ? (
-              <Grid container alignItems="center">
+            <Grid container alignItems="center">
+              {review.recommend === true ? (
                 <InsertEmoticonIcon />
-                <Typography
-                  className={classes.icon}
-                  variant="caption"
-                  gutterBottom
-                >
-                  <b>Yes,</b> I would recommend this to a friend
-                </Typography>
-              </Grid>
-            ) : (
-              <Grid container alignItems="center">
+              ) : (
                 <SentimentVeryDissatisfiedIcon />
-                <Typography
-                  className={classes.icon}
-                  variant="caption"
-                  gutterBottom
-                >
-                  <b>No,</b> I would not recommend this to a friend
-                </Typography>
-              </Grid>
-            )}
+              )}
+              <Typography
+                className={classes.icon}
+                variant="caption"
+                gutterBottom
+              >
+                {review.recommend === true ? (
+                  <div>
+                    <b>Yes,</b> I would recommend this to a friend
+                  </div>
+                ) : (
+                  <div>
+                    <b>No,</b> I would not recommend this to a friend
+                  </div>
+                )}
+              </Typography>
+            </Grid>
             <Divider className={classes.divider} />
           </div>
         ))
