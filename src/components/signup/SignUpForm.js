@@ -1,16 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import userService from "../../services/users";
-import { UserContext } from "../../contexts/UserContext";
 
 import { Button, Link, Grid, TextField } from "@material-ui/core";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 import useStyles from "../signin/styles";
 
-const SignUpForm = ({ handleException }) => {
+const SignUpForm = ({ createUser }) => {
   const classes = useStyles();
   const history = useHistory();
-  const { loginToApp } = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -19,26 +16,12 @@ const SignUpForm = ({ handleException }) => {
   const handleSignUp = async (event) => {
     event.preventDefault();
 
-    try {
-      const signupSuccess = await userService.signup({
-        username,
-        password,
-        name,
-        lastName,
-      });
-      setUsername("");
-      setPassword("");
-      setName("");
-      setLastName("");
-      // after signing up, log user in
-      const loginSuccess = await loginToApp(username, password);
-
-      if (signupSuccess && loginSuccess) {
-        history.push(`/`);
-      }
-    } catch (exception) {
-      handleException(exception);
-    }
+    createUser({
+      username,
+      password,
+      name,
+      lastName,
+    });
   };
 
   return (
