@@ -2,9 +2,9 @@ import axios from "axios";
 const baseUrl = "https://cloudcomputers.herokuapp.com/api/products";
 // const baseUrl = "/api/products";
 
-const getAll = () => {
-  const request = axios.get(baseUrl);
-  return request.then((response) => response.data);
+const getAll = async () => {
+  const request = await axios.get(baseUrl);
+  return request.data;
 };
 
 const productService = { getAll };
