@@ -2,31 +2,22 @@
 
 This is a fullstack MERN application that models an e-commerce website that lets users buy computer parts. Includes Unit, Integration, and End-To-End Testing. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
 
-[Live Demo of Application](https://cloudcomputers.netlify.app/)
+## 🔗 Live Demo of [Cloud Computers](https://cloudcomputers.netlify.app/)
 
-# Backend
+## ⫸ [Backend Repo](https://github.com/lazirpascual/shopping-website-backend)
 
-[Backend Repo](https://github.com/lazirpascual/shopping-website-backend)
-
-## Tech Stack
+## 🛠 Tech Stack
 
 | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/react.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@4.25.0/icons/node-dot-js.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/express.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/mongodb.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/material-ui.svg" width="40"> |
 | :--------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 
-- React JS
-  - Routers
-  - Context API
-- Material-UI
-- Node JS
-- Express
-- MongoDB
-  - Mongoose
-- Jest
-- Heroku & Netlify
-  - Frontend: Hosted in Netlify
-  - Backend: Hosted in Heroku
+- **Front-End**: Javascript, React (Routers & Context API), Material-UI </br>
+- **Back-End**: NodeJS, Express, Socket.IO </br>
+- **Database**: MongoDB </br>
+- **Testing**: Jest, React-Testing-Library, Cypress
+- **Deployment**: Heroku (backend), Netlify (frontend), MongoDB Atlas
 
-## Features
+## ⚙️ Features
 
 - Responsive design which includes a clean user interface with smooth animations
 - User registration/login authenticated through JSON Web Token
@@ -35,7 +26,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 - Search products by name and filter products by categories in the shop
 - Finalize your purchase by checking out your items
 
-## Development Process
+# Development Process
 
 - **Frontend** <br />
   This project was initially created with only a frontend in mind. My goal was to build a project that would further enhance my React skills by using React Routers to navigate to different pages throughout my application and by using the Context API to globally manage state. Additionaly, I decided to use a component library called Material-UI to style my application.
@@ -44,7 +35,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 - **Adding Tests** <br />
   To complete the fullstack aspect of my application, I thought that it would be a good idea to implement testing. Therefore, I added three levels of testing in my application; Unit Testing, Integration Testing, and End-To-End Testing.
   - **Unit Testing** <br />
-    First, I added some unit tests for the functionalities of the shopping cart page. These tests includes the following; the calculation for the subtotal of an item, the number of items in a cart and the total price in a cart. Then, I added unit tests for the react components. These tests checks whether the products in the cart/shop and reviews in the product page have all been rendered properly. Unit tests were also added that checks whether the Review/Signup forms were saving and updating the input fields with the correct content as well as a test that checks whether that AddToCart button was working as intended.
+    First, I added some unit tests for the functionalities of the shopping cart page. These tests includes the following; the calculation for the subtotal of an item, the number of items in a cart and the total price in a cart. Then, I added unit tests for the react components. These tests checks whether the products in the cart/shop and the reviews in the product page have all been rendered properly. Additionaly, I added tests that checks whether the Review/Signup forms were saving and updating the input fields with the correct content properly. Finally, I created a a test that checks whether that AddToCart button was working as intended.
   - **Integration Testing** <br />
     Then, I added some integation testing for the backend portion of my application. I decided to conduct API-level integration tests for the backend server by making HTTP requests and inspecting the test database I created with Mongoose. These tests included the testing of the REST API methods such as when initially retreiving, adding, and deleting an item from the shopping cart.
 - **Adding More Features** <br />
@@ -53,39 +44,39 @@ This is a fullstack MERN application that models an e-commerce website that lets
   - **Review/Rating System** <br />
     By creating user accounts, I was able to implement more features that were user related. This is where I created the review/rating system where user authenticated accounts are able to leave ratings (ranging from 1 to 5 stars) and also write their own reviews for a specific product. Ratings/reviews can only be deleted by the user who created them.
 
-## Screenshots
+# Screenshots
 
-### Home Page
+## 1. Home Page
 
 ![preview](https://i.imgur.com/Zhy1Xpi.jpg)
 
 - Upon initially loading the application, it redirects you to the homepage. In this page, a user can click buttons that take them to the shopping page, register page, or the login page.
 
-### Catalog Page
+## 2. Catalog Page
 
 ![preview](https://i.imgur.com/07f9pMg.jpg)
 
 - The catalog page displays a preview of all the items in the shop. In this page, a user can search for a specific product by name or filter all products out by their specific category.
 
-### Product Page
+## 3. Product Page
 
 ![preview](https://i.imgur.com/5SmrvhH.jpg)
 
 - When a user clicks on a product, they are redirected to the product page. This page displays an overview of each item such as the product name, price, a description of what the product is, the rating of that product as well as the reviews left by the customers. Users can also add the current displayed item to the cart as well as create a rating/review for the current item.
 
-### Review Page
+## 4. Review Page
 
 ![preview](https://i.imgur.com/rxgUKfl.jpg)
 
 - When a user clicks on the "write a review" button on the product page, they are then prompted a review form from this page. Users can choose a rating from 1-5 and write their reviews which contains a title, a description, as well as an option to choose whether they would recommend this product to a friend or not.
 
-### Cart Page
+## 5. Cart Page
 
 ![preview](https://i.imgur.com/4CUGLN2.jpg)
 
 - All the items added by the user is displayed on this page. Here, a user can update the content of their current products by changing the product quantity or by deleting the product itself. The page also displays a quick summary of how many items there are in the cart as well as the total calculated price. Finally, a user can click the checkout button to finalize their purchase.
 
-### Checkout Page
+## 6. Checkout Page
 
 ![preview](https://i.imgur.com/Xn0gved.jpg)
 
