@@ -1,4 +1,4 @@
-# Cloud-Computers
+# Cloud Computers
 
 This is a fullstack MERN application that models an e-commerce website that lets users buy computer parts. Includes Unit, Integration, and End-To-End Testing. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
 
@@ -12,7 +12,7 @@ This is a fullstack MERN application that models an e-commerce website that lets
 | :--------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 
 - **Front-End**: Javascript, React (Routers & Context API), Material-UI </br>
-- **Back-End**: NodeJS, Express, Socket.IO </br>
+- **Back-End**: NodeJS, Express </br>
 - **Database**: MongoDB </br>
 - **Testing**: Jest, React-Testing-Library, Cypress
 - **Deployment**: Heroku (backend), Netlify (frontend), MongoDB Atlas
