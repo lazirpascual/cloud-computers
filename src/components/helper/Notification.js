@@ -7,7 +7,7 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const Notification = ({ message, open, setOpen }) => {
+const Notification = ({ message, open, setOpen, type }) => {
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
