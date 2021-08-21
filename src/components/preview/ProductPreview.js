@@ -23,7 +23,7 @@ const ProductPreview = () => {
     };
 
     getProductReviews();
-  }, []);
+  }, [preview]);
 
   const calculateAverageReview = () => {
     const sum = reviews.reduce((accumulator, currentValue) => {
