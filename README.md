@@ -2,7 +2,7 @@
 
 ## Live Demo of [Cloud Computers](https://cloudcomputers.netlify.app/)
 
-This is a fullstack MERN application that models an e-commerce website that lets users buy computer parts. Includes Unit, Integration, and End-To-End Testing. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
+This is a fullstack MERN application that models an e-commerce website that lets users buy computer parts. Includes Unit and Integration Testing. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
 
 ## 🔗 Backend [Repo](https://github.com/lazirpascual/cloud-computers-backend)
 
