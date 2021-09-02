@@ -12,6 +12,7 @@ import { Container, Grid } from "@material-ui/core";
 const ProductPreview = () => {
   const { preview } = useContext(ProductContext);
   const [reviews, setReviews] = useState([]);
+  console.log(preview);
 
   useEffect(() => {
     const getProductReviews = async () => {

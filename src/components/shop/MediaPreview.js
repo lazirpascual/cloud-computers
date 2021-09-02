@@ -12,7 +12,7 @@ const MediaPreview = ({ product }) => {
       onMouseOut={() => setShow(false)}
       className={show ? classes.mediaHovered : classes.media}
       component="img"
-      src={show ? product.imgPreview : product.imgPath}
+      src={show ? product.imgpreview : product.imgpath}
       title={product.name}
     ></CardMedia>
   );

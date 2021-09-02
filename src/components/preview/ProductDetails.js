@@ -54,7 +54,7 @@ const ProductDetails = ({ preview, calculateAverageReview, reviews }) => {
       </Box>
       <img
         className={classes.image}
-        src={preview.productPreview}
+        src={preview.productpreview}
         alt={preview.name}
       />
     </Grid>

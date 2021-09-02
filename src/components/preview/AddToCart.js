@@ -17,7 +17,15 @@ const AddToCart = ({ preview, setCompleteOrder }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    addProduct(preview);
+    const newProduct = {
+      name: preview.name,
+      price: preview.price,
+      category: preview.category,
+      quantity: preview.quantity,
+      productpreview: preview.productpreview,
+    };
+    addProduct(newProduct);
+    console.log(preview);
     setOpen(true);
     setCompleteOrder(true);
   };

@@ -28,7 +28,7 @@ const CartProducts = ({ product }) => {
       <Grid container alignItems="center">
         <img
           className={classes.image}
-          src={product.productPreview}
+          src={product.productpreview}
           alt={product.name}
         />
         <Typography className={classes.name} variant="body1">
