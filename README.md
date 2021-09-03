@@ -2,20 +2,20 @@
 
 ## Live Demo of [Cloud Computers](https://cloudcomputers.netlify.app/)
 
-This is a fullstack MERN application that models an e-commerce website that lets users buy computer parts. Includes Unit and Integration Testing. Made using Javascript, React JS, Node JS, Express, MongoDB, and Material-UI. <br />
+This is a fullstack PERN application that models an e-commerce website that lets users buy computer parts. Includes Unit and Integration Testing. Made using Javascript, React JS, Node JS, Express, PostgreSQL, and Material-UI. <br />
 
 ## 🔗 Backend [Repo](https://github.com/lazirpascual/cloud-computers-backend)
 
 ## 🛠 Tech Stack
 
-| <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/react.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@4.25.0/icons/node-dot-js.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/express.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/mongodb.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/material-ui.svg" width="40"> |
-| :--------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/react.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@4.25.0/icons/node-dot-js.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/express.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/postgresql.svg" width="40"> | <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/material-ui.svg" width="40"> |
+| :--------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 
-- **Front-End**: Javascript, React (Routers & Context API), Material-UI </br>
+- **Front-End**: Javascript, React (Context API), Material-UI </br>
 - **Back-End**: NodeJS, Express </br>
-- **Database**: MongoDB </br>
+- **Database**: PostgreSQL </br>
 - **Testing**: Jest, React-Testing-Library
-- **Deployment**: Heroku (backend), Netlify (frontend), MongoDB Atlas
+- **Deployment**: Heroku (backend), Netlify (frontend)
 
 ## ⚙️ Features
 
@@ -43,6 +43,8 @@ This is a fullstack MERN application that models an e-commerce website that lets
     After integrating a backend, I created the ability for users to sign up and log in to their own accounts. This made it possible for users to keep track of their individual shopping carts, ensuring that only they themselves can change the contents of their own products. This was accomplished through the addition of users/login REST APIs and User/Token Authentication.
   - **Review/Rating System** <br />
     By creating user accounts, I was able to implement more features that were user related. This is where I created the review/rating system where user authenticated accounts are able to leave ratings (ranging from 1 to 5 stars) and also write their own reviews for a specific product. Ratings/reviews can only be deleted by the user who created them.
+- **Switching to PostgreSQL** <br />
+  After initially building the database with MongoDB, a non-relational database, I decided to learn about SQL and relational databases. I chose PostgreSQL, in which I learned various things about SQL such as using roles to handle authentication and making queries to handle changes in SQL databases. I realized that there were many things SQL could have solved better/more efficiently than MongoDB, such as the ability to store foreign keys or joining relationships through tables. Thus, I decided to refactor the backend with PostgreSQL serving as the database.
 
 # Screenshots
 
