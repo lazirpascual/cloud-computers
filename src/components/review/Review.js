@@ -50,7 +50,7 @@ const Review = () => {
         >
           <img
             className={classes.image}
-            src={preview.productPreview}
+            src={preview.productpreview}
             alt={preview.name}
           />
           <Typography align="left" variant="h6">

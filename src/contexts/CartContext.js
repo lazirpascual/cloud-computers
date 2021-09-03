@@ -18,7 +18,7 @@ const CartContextProvider = (props) => {
     const getUserCart = async (event) => {
       const initialCartList = await userItemsService.getAll();
       const userCartList = initialCartList.filter(
-        (product) => user.name === product.user.name
+        (product) => user.username === product.username
       );
       setProductList(userCartList);
     };
