@@ -10,8 +10,8 @@ const SignUpForm = ({ createUser }) => {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstname, setName] = useState("");
+  const [lastname, setLastName] = useState("");
 
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -19,8 +19,8 @@ const SignUpForm = ({ createUser }) => {
     createUser({
       username,
       password,
-      name,
-      lastName,
+      firstname,
+      lastname,
     });
   };
 
@@ -30,7 +30,7 @@ const SignUpForm = ({ createUser }) => {
         <Grid item xs={12} sm={6}>
           <TextField
             onChange={(e) => setName(e.target.value)}
-            value={name}
+            value={firstname}
             autoComplete="fname"
             name="firstName"
             variant="outlined"
@@ -44,7 +44,7 @@ const SignUpForm = ({ createUser }) => {
         <Grid item xs={12} sm={6}>
           <TextField
             onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
+            value={lastname}
             variant="outlined"
             required
             fullWidth

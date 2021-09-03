@@ -11,7 +11,6 @@ import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissa
 const Review = ({ review, handleDelete }) => {
   const classes = useStyles();
   const { user } = useContext(UserContext);
-  console.log(review);
 
   return (
     <div className={classes.reviewWidth}>
