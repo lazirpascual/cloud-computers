@@ -11,6 +11,7 @@ import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissa
 const Review = ({ review, handleDelete }) => {
   const classes = useStyles();
   const { user } = useContext(UserContext);
+  console.log(review);
 
   return (
     <div className={classes.reviewWidth}>
@@ -26,14 +27,14 @@ const Review = ({ review, handleDelete }) => {
         <Typography className={classes.textReview} variant="body1">
           {review.title}
         </Typography>
-        {user && user.name === review.user.name && (
+        {user?.username === review.username && (
           <IconButton onClick={() => handleDelete(review.id)}>
             <DeleteForeverIcon></DeleteForeverIcon>
           </IconButton>
         )}
       </Box>
       <Typography variant="subtitle2" gutterBottom>
-        Reviewed by {review.user.name} — {review.date}
+        Reviewed by {review?.username} — {review.date}
       </Typography>
       <Typography variant="body1" gutterBottom>
         {review.comment}

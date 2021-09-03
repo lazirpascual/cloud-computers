@@ -12,13 +12,12 @@ import { Container, Grid } from "@material-ui/core";
 const ProductPreview = () => {
   const { preview } = useContext(ProductContext);
   const [reviews, setReviews] = useState([]);
-  console.log(preview);
 
   useEffect(() => {
     const getProductReviews = async () => {
       const initialReviews = await reviewService.getAll();
       const productReviews = initialReviews.filter(
-        (review) => preview.id === review.productId
+        (review) => preview.id === parseInt(review.productid)
       );
       setReviews(productReviews);
     };

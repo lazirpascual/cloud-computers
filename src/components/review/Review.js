@@ -23,7 +23,6 @@ const Review = () => {
   const createReview = async (reviewObject) => {
     try {
       const reviewSuccess = await reviewService.create(reviewObject);
-
       if (reviewSuccess) {
         history.push("/preview");
       }

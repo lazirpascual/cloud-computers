@@ -19,7 +19,6 @@ const ReviewForm = ({ createReview }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const newRecommend = recommend === "true" ? true : false;
-
     createReview({
       rating,
       title,
