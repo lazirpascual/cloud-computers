@@ -1,13 +1,39 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../../contexts/ShopContext';
 import ProductCard from './ProductCard';
-
-import { Typography, Container, Grid } from '@material-ui/core';
+import {
+  Typography,
+  Container,
+  Grid,
+  Box,
+  CircularProgress,
+} from '@material-ui/core';
 import useStyles from './styles';
 
 const Products = () => {
   const classes = useStyles();
-  const { products } = useContext(ShopContext);
+  const { products, isLoading } = useContext(ShopContext);
+
+  if (isLoading)
+    return (
+      <Box
+        display="flex"
+        flexDirection="column"
+        padding={4}
+        sx={{ display: 'flex', alignItems: 'center' }}
+      >
+        <CircularProgress color="inherit" size={80} />
+        <Typography
+          align="center"
+          color="textSecondary"
+          className={classes.text}
+          variant="h6"
+        >
+          Initializing product catalog from our servers. Your selections will be
+          ready shortly.
+        </Typography>
+      </Box>
+    );
 
   return (
     <Container>
@@ -27,14 +53,6 @@ const Products = () => {
               variant="h4"
             >
               No products found with that name.
-            </Typography>
-            <Typography
-              align="center"
-              color="textSecondary"
-              className={classes.text}
-              variant="h6"
-            >
-              (Please wait until the API is fetched on initial load)
             </Typography>
           </div>
         )}
