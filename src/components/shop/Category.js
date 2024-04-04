@@ -1,22 +1,22 @@
-import React, { useContext, useState } from "react";
-import { ShopContext } from "../../contexts/ShopContext";
-import productService from "../../services/products";
-import Search from "./Search";
-import { Typography, Button, ButtonGroup } from "@material-ui/core";
-import useStyles from "./styles";
+import React, { useContext, useState } from 'react';
+import { ShopContext } from '../../contexts/ShopContext';
+import productService from '../../services/products';
+import Search from './Search';
+import { Typography, Button, ButtonGroup } from '@material-ui/core';
+import useStyles from './styles';
 
 const Category = () => {
   const classes = useStyles();
   const { setProducts, filterProduct } = useContext(ShopContext);
-  const [currentCategory, setCurrentCategory] = useState("All Products");
+  const [currentCategory, setCurrentCategory] = useState('All Products');
   const [viewAll, setViewAll] = useState(true);
 
   const categories = [
-    { category: "Processors" },
-    { category: "Memory" },
-    { category: "Motherboard" },
-    { category: "Video Card" },
-    { category: "Case" },
+    { category: 'Processor' },
+    { category: 'Memory' },
+    { category: 'Motherboard' },
+    { category: 'Video Card' },
+    { category: 'Case' },
   ];
 
   const ToggleViewAll = () => {
@@ -33,7 +33,7 @@ const Category = () => {
     productService.getAll().then((initialProducts) => {
       setProducts(initialProducts);
     });
-    setCurrentCategory("All Products");
+    setCurrentCategory('All Products');
     ToggleViewAll();
   };
 
