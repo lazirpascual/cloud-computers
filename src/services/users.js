@@ -1,6 +1,6 @@
-import axios from "axios";
-const baseUrl = "https://cloudcomputers-pg.herokuapp.com/api/users";
-//const baseUrl = "/api/users";
+import axios from 'axios';
+const baseUrl = 'https://cloud-computers-backend.onrender.com/api/users';
+// const baseUrl = '/api/users';
 
 const getAll = async () => {
   const request = await axios.get(baseUrl);

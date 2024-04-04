@@ -1,6 +1,6 @@
-import axios from "axios";
-const baseUrl = "https://cloudcomputers-pg.herokuapp.com/api/reviews";
-//const baseUrl = "/api/reviews";
+import axios from 'axios';
+const baseUrl = 'https://cloud-computers-backend.onrender.com/api/reviews';
+// const baseUrl = '/api/reviews';
 
 let token = null;
 

@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { ShopContext } from "../../contexts/ShopContext";
-import ProductCard from "./ProductCard";
+import React, { useContext } from 'react';
+import { ShopContext } from '../../contexts/ShopContext';
+import ProductCard from './ProductCard';
 
-import { Typography, Container, Grid } from "@material-ui/core";
-import useStyles from "./styles";
+import { Typography, Container, Grid } from '@material-ui/core';
+import useStyles from './styles';
 
 const Products = () => {
   const classes = useStyles();
@@ -34,7 +34,7 @@ const Products = () => {
               className={classes.text}
               variant="h6"
             >
-              (Please wait until the API is fetched from Heroku on initial load)
+              (Please wait until the API is fetched on initial load)
             </Typography>
           </div>
         )}

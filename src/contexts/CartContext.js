@@ -1,7 +1,7 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-import cartService from "../services/cartitems";
-import userItemsService from "../services/useritems";
-import { UserContext } from "./UserContext";
+import React, { useState, useEffect, createContext, useContext } from 'react';
+import cartService from '../services/cartitems';
+import userItemsService from '../services/useritems';
+import { UserContext } from './UserContext';
 
 export const CartContext = createContext();
 
@@ -43,7 +43,12 @@ const CartContextProvider = (props) => {
         const returnedProduct = await service.create(newProduct);
         setProductList([...productList, returnedProduct]);
       } catch (error) {
-        console.log(error.response.data);
+        if (error.response && error.response.data) {
+          console.log(error.response.data);
+        } else {
+          // Handle cases where error.response is undefined
+          console.log(error.message);
+        }
       }
     }
   };
@@ -51,7 +56,7 @@ const CartContextProvider = (props) => {
   const deleteProduct = async (key) => {
     const service = user ? userItemsService : cartService;
 
-    if (window.confirm("Remove This Product?")) {
+    if (window.confirm('Remove This Product?')) {
       try {
         await service.remove(key);
         setProductList(productList.filter((product) => product.id !== key));
