@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
-import { useHistory } from "react-router-dom";
-import useStyles from "./styles";
-import { Typography, Button } from "@material-ui/core";
-import LogInOutButton from "./LogInOutButton";
+import React, { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
+import { useHistory } from 'react-router-dom';
+import useStyles from './styles';
+import { Typography, Button } from '@material-ui/core';
+import LogInOutButton from './LogInOutButton';
 
 const HomeSection = () => {
   const classes = useStyles();
@@ -17,7 +17,7 @@ const HomeSection = () => {
           Nvidia Gefore RTX 3090
         </Typography>
         <Typography variant="h5" gutterBottom>
-          Now available for preorder, shipping December, 2020.
+          Now available for preorder, shipping December, 2024.
         </Typography>
         <Button
           onClick={() => history.push(`/shop`)}
