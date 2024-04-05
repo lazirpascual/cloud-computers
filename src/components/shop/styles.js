@@ -48,4 +48,9 @@ export default makeStyles({
   productName: {
     fontSize: 18,
   },
+  loadingIndicator: {
+    paddingLeft: 50,
+    marginTop: 100,
+    gap: 20,
+  },
 });

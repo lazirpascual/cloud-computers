@@ -6,8 +6,9 @@ import {
   Container,
   Grid,
   Box,
-  CircularProgress,
+  LinearProgress,
 } from '@material-ui/core';
+
 import useStyles from './styles';
 
 const Products = () => {
@@ -16,19 +17,9 @@ const Products = () => {
 
   if (isLoading)
     return (
-      <Box
-        display="flex"
-        flexDirection="column"
-        padding={4}
-        sx={{ display: 'flex', alignItems: 'center' }}
-      >
-        <CircularProgress color="inherit" size={80} />
-        <Typography
-          align="center"
-          color="textSecondary"
-          className={classes.text}
-          variant="h6"
-        >
+      <Box className={classes.loadingIndicator}>
+        <LinearProgress />
+        <Typography align="center" color="textSecondary" variant="h6">
           Initializing product catalog from our servers. Your selections will be
           ready shortly.
         </Typography>
